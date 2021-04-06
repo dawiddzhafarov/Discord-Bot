@@ -16,12 +16,15 @@ public class Bot {
         List<GatewayIntent> gatewayIntents = new ArrayList<>();
         gatewayIntents.add(GatewayIntent.GUILD_MEMBERS);
 
+
         PingPong pingpong = new PingPong();
         RoleReactions role = new RoleReactions();
+        Prefix prompt = new Prefix();
 
         jdabuilder.enableIntents(gatewayIntents);
         jdabuilder.addEventListeners(role);
         jdabuilder.addEventListeners(pingpong);
+        jdabuilder.addEventListeners(prompt);
         jdabuilder.setActivity(Activity.playing("o wielką stawkę"));
         try {
             jda = jdabuilder.build();

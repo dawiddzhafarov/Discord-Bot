@@ -15,25 +15,25 @@ public class PingPong extends ListenerAdapter {
     final long roleid = 818781151388106752L;  //new user role id
     @Override
     public void onMessageReceived(MessageReceivedEvent e){
-        if(e.getMessage().getContentRaw().equals("!ping")) {
+        if(e.getMessage().getContentRaw().equals(Prefix.prefix+"ping")) {
             e.getChannel().sendMessage("pong").queue();
         }
-        else if (e.getMessage().getContentRaw().equals("!time")) {
+        else if (e.getMessage().getContentRaw().equals(Prefix.prefix+"time")) {
             e.getChannel().sendMessage(time()).queue();
         }
-        else if (e.getMessage().getContentRaw().equals("!invite")) {
+        else if (e.getMessage().getContentRaw().equals(Prefix.prefix+"invite")) {
             e.getChannel().sendMessage(String.format(url, e.getJDA().getSelfUser().getId())).queue();
         }
-        if(e.getMessage().getContentRaw().equals("!quit")) {
+        if(e.getMessage().getContentRaw().equals(Prefix.prefix+"quit")) {
             e.getChannel().getJDA().shutdown();
         }
-        if(e.getMessage().getContentRaw().equals("!pong")) {
+        if(e.getMessage().getContentRaw().equals(Prefix.prefix+"pong")) {
             e.getChannel().sendMessage("ping").queue();
         }
-        if(e.getMessage().getContentRaw().equals("!name")) {
+        if(e.getMessage().getContentRaw().equals(Prefix.prefix+"name")) {
             e.getChannel().sendMessage(e.getAuthor().getName()).queue();
         }
-        if (e.getMessage().getContentRaw().startsWith("!kick")) {
+        if (e.getMessage().getContentRaw().startsWith(Prefix.prefix+"kick")) {
             Role adminrole = e.getGuild().getRoleById(adminID);
 
             String memberID = e.getGuild().getMembersWithRoles(adminrole).get(0).getUser().getId();
