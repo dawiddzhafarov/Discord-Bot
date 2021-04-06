@@ -8,9 +8,9 @@ public class Prefix extends ListenerAdapter {
         String[] message = e.getMessage().getContentRaw().split(" ");
         if(message.length == 1 && message[0].equals(prefix+"prompt")) {
             e.getChannel().sendMessage("Info jak zmienić prompt").queue();
-        }else if(message.length == 2){
+        }else if(message.length == 2 && message[0].equals(prefix+"prompt")){
             prefix = message[1];
-            e.getChannel().sendMessage("Prompt has been changed to: "+prefix).queue();
+            e.getChannel().sendMessage("Prefix has been changed to: "+prefix).queue();
         }
     }
 }

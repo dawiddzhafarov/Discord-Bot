@@ -1,3 +1,7 @@
+//import Commands_utilities.Prefix;
+
+import com.jagrosh.jdautilities.command.CommandClient;
+import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -8,23 +12,41 @@ import javax.security.auth.login.LoginException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Bot {
 
     public static void main(String args[]) throws Exception {
-        JDABuilder jdabuilder = new JDABuilder().createDefault("ODE4MTE5NDQ3NTYxNjMzNzk0.YETbHA.Gv99DsiwyhAzL53kL3G2eDQCNzw");
+        JDABuilder jdabuilder = JDABuilder.createDefault("ODE4MTE5NDQ3NTYxNjMzNzk0.YETbHA.Gv99DsiwyhAzL53kL3G2eDQCNzw");
         JDA jda = null;
         List<GatewayIntent> gatewayIntents = new ArrayList<>();
         gatewayIntents.add(GatewayIntent.GUILD_MEMBERS);
+        /*
+        straciłem cierpliwość wiec albo znajdziemy sposób na naprawę tego albo stworzymy własną wersję :P
+        CommandClientBuilder builder = new CommandClientBuilder();
+
+        builder.setPrefix("!");
+        builder.setHelpWord("help");
+
+
+        CommandClient client = builder.build();
+
+        jdabuilder.addEventListeners(client);
+        //client.addCommand(new Commands_utilities.Prefix);
+
+        */
 
 
         PingPong pingpong = new PingPong();
         RoleReactions role = new RoleReactions();
-        Prefix prompt = new Prefix();
+        Prefix prefix = new Prefix();
+        Filter filter = new Filter();
 
         jdabuilder.enableIntents(gatewayIntents);
         jdabuilder.addEventListeners(role);
         jdabuilder.addEventListeners(pingpong);
-        jdabuilder.addEventListeners(prompt);
+        jdabuilder.addEventListeners(prefix);
+        jdabuilder.addEventListeners(filter);
+
         jdabuilder.setActivity(Activity.playing("o wielką stawkę"));
         try {
             jda = jdabuilder.build();
