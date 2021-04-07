@@ -1,6 +1,7 @@
 //import Commands_utilities.Prefix;
 
 import Commands_utilities.Clear;
+import Commands_utilities.CommandsManager;
 import Commands_utilities.Kick;
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
@@ -16,10 +17,11 @@ import java.util.List;
 
 
 public class Bot {
+    static public JDA jda;
 
     public static void main(String args[]) throws Exception {
         JDABuilder jdabuilder = JDABuilder.createDefault("ODE4MTE5NDQ3NTYxNjMzNzk0.YETbHA.Gv99DsiwyhAzL53kL3G2eDQCNzw");
-        JDA jda = null;
+        jda = null;
         List<GatewayIntent> gatewayIntents = new ArrayList<>();
         gatewayIntents.add(GatewayIntent.GUILD_MEMBERS);
         /*
@@ -36,11 +38,12 @@ public class Bot {
         //client.addCommand(new Commands_utilities.Prefix);
 
         */
+        CommandsManager manager = new CommandsManager("!","help");
 
 
         PingPong pingpong = new PingPong();
         RoleReactions role = new RoleReactions();
-        Prefix prefix = new Prefix();
+        Prefix prefix = new Prefix(manager);
         Filter filter = new Filter();
         Kick kick = new Kick();
         Clear clear = new Clear();
@@ -52,10 +55,14 @@ public class Bot {
         jdabuilder.addEventListeners(filter);
         jdabuilder.addEventListeners(kick);
         jdabuilder.addEventListeners(clear);
+        //jdabuilder.addEventListeners(manager);
 
-        jdabuilder.setActivity(Activity.playing("o wielką stawkę"));
+        //jdabuilder.setActivity(Activity.playing("Type: "+manager.getPrefix()+manager.getHelpWord()+ " for command list :D"));
         try {
             jda = jdabuilder.build();
+            manager.addJDA(jda);
+            jda.addEventListener(manager);
+            jda.getPresence().setActivity(Activity.playing("Type: "+manager.getPrefix()+manager.getHelpWord()+ " for command list :D"));
         } catch (LoginException e) {
             e.printStackTrace();
         }
