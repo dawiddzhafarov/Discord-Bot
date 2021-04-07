@@ -1,5 +1,6 @@
 //import Commands_utilities.Prefix;
 
+import Commands.Quote;
 import Commands_utilities.Clear;
 import Commands_utilities.CommandsManager;
 import Commands_utilities.Kick;
@@ -14,6 +15,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 import javax.security.auth.login.LoginException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 
 public class Bot {
@@ -41,12 +43,18 @@ public class Bot {
         CommandsManager manager = new CommandsManager("!","help");
 
 
+
+
         PingPong pingpong = new PingPong();
         RoleReactions role = new RoleReactions();
         Prefix prefix = new Prefix(manager);
         Filter filter = new Filter();
         Kick kick = new Kick();
         Clear clear = new Clear();
+
+        Quote quote = new Quote();
+
+        manager.addCommand(quote);
 
         jdabuilder.enableIntents(gatewayIntents);
         jdabuilder.addEventListeners(role);

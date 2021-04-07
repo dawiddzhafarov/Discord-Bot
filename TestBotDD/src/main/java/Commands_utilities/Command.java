@@ -7,22 +7,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public abstract class Command {
-    private String name;
-    private String help;
-    private List<String> aliases;
+    protected String name;
+    protected String help;
+    protected List<String> aliases;
 
-    public Command(String name) {
-        this.name = name;
-    }
-    public Command(String name, String help) {
-        this.name = name;
-        this.help = help;
-    }
-    public Command(String name, String help, String[] aliases) {
-        this.name = name;
-        this.help = help;
-        this.aliases = Arrays.asList(aliases);
-    }
 
     protected void execute(MessageReceivedEvent e){};
 
