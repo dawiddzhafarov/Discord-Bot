@@ -1,10 +1,7 @@
-//import Commands_utilities.Commands.Prefix;
+//import Commands_utilities.Commands.Commands.Prefix;
 
-import Commands.Prefix;
-import Commands.Quote;
-import Commands_utilities.Clear;
+import Commands.*;
 import Commands_utilities.CommandsManager;
-import Commands_utilities.Kick;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -34,7 +31,7 @@ public class Bot {
         CommandClient client = builder.build();
 
         jdabuilder.addEventListeners(client);
-        //client.addCommand(new Commands_utilities.Commands.Prefix);
+        //client.addCommand(new Commands_utilities.Commands.Commands.Prefix);
 
         */
         CommandsManager manager = new CommandsManager("!","help");
@@ -52,11 +49,12 @@ public class Bot {
         Quote quote = new Quote();
 
         manager.addCommand(quote);
+        manager.addCommand(prefix);
 
         jdabuilder.enableIntents(gatewayIntents);
         jdabuilder.addEventListeners(role);
         jdabuilder.addEventListeners(pingpong);
-        jdabuilder.addEventListeners(prefix);
+        //jdabuilder.addEventListeners(prefix);
         jdabuilder.addEventListeners(filter);
         jdabuilder.addEventListeners(kick);
         jdabuilder.addEventListeners(clear);

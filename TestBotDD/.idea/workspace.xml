@@ -23,7 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e70c8b5f-8479-499e-a4dc-1a045b37c20a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/Prefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/Prefix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Commands_utilities/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Commands_utilities/Kick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/Kick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Commands_utilities/Prefix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PingPong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/PingPong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Prefix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Bot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Commands/Prefix.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Commands/Prefix.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Commands_utilities/Clear.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Commands_utilities/Kick.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Commands_utilities/Prefix.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PingPong.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Prefix.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +70,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../POprojekt/po2020/Projekt/DungeonsAndDragons" />
@@ -67,13 +83,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -93,6 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1617798235181</updated>
       <workItem from="1617798236648" duration="11236000" />
+      <workItem from="1617873684454" duration="4843000" />
     </task>
     <servers />
   </component>
@@ -109,31 +128,36 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="789" y="263" key="#com.intellij.ide.util.MemberChooser" timestamp="1617807495429">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="789" y="263" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1617807495429" />
+    <state x="681" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617879365120">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="681" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617879365120" />
     <state x="764" y="334" key="FileChooserDialogImpl" timestamp="1617800506426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="764" y="334" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617800506426" />
-    <state width="1842" height="252" key="GridCell.Tab.0.bottom" timestamp="1617808717978">
+    <state width="1842" height="252" key="GridCell.Tab.0.bottom" timestamp="1617880331683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617808717978" />
-    <state width="1842" height="252" key="GridCell.Tab.0.center" timestamp="1617808717978">
+    <state width="1842" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617880331683" />
+    <state width="1842" height="252" key="GridCell.Tab.0.center" timestamp="1617880331683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617808717978" />
-    <state width="1842" height="252" key="GridCell.Tab.0.left" timestamp="1617808717978">
+    <state width="1842" height="252" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617880331683" />
+    <state width="1842" height="252" key="GridCell.Tab.0.left" timestamp="1617880331682">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617808717978" />
-    <state width="1842" height="252" key="GridCell.Tab.0.right" timestamp="1617808717978">
+    <state width="1842" height="252" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617880331682" />
+    <state width="1842" height="252" key="GridCell.Tab.0.right" timestamp="1617880331683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617808717978" />
+    <state width="1842" height="252" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617880331683" />
   </component>
 </project>
