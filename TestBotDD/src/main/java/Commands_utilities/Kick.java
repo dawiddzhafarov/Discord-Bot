@@ -9,7 +9,9 @@ public class Kick extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent e){
-        if (e.getMessage().getContentRaw().startsWith("!kick")){
+        String[] args = e.getMessage().getContentRaw().split("\\s+");
+        if (args[0].equalsIgnoreCase(Prefix.prefix + "kick")){
+        //if (e.getMessage().getContentRaw().startsWith(args[0])){
             if(e.getMember().hasPermission(Permission.KICK_MEMBERS)) {
                 for (Member member : e.getMessage().getMentionedMembers()) {
                     member.kick().queue();

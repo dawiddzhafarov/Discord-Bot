@@ -9,11 +9,14 @@ import java.util.List;
 import java.util.Locale;
 
 public class Clear extends ListenerAdapter {
+    Prefix prefix = new Prefix();
 
     @Override
     public void onMessageReceived(MessageReceivedEvent e){
         String[] args = e.getMessage().getContentRaw().split("\\s+");
-        if (args[0].equalsIgnoreCase(Prefix.prefix + "clear")){
+
+        if (e.getMessage().getContentRaw().startsWith(Prefix.prefix + "clear")){
+
             if (args.length < 2) {
                 e.getChannel().sendMessage("Po komendzie !clear podaj liczbę wiadomości do usunięcia!").queue();
             } else {

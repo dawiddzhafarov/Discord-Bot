@@ -1,21 +1,18 @@
-//import Commands_utilities.Prefix;
+//import Commands_utilities.Commands.Prefix;
 
+import Commands.Prefix;
 import Commands.Quote;
 import Commands_utilities.Clear;
 import Commands_utilities.CommandsManager;
 import Commands_utilities.Kick;
-import com.jagrosh.jdautilities.command.CommandClient;
-import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
 import javax.security.auth.login.LoginException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 
 
 public class Bot {
@@ -37,7 +34,7 @@ public class Bot {
         CommandClient client = builder.build();
 
         jdabuilder.addEventListeners(client);
-        //client.addCommand(new Commands_utilities.Prefix);
+        //client.addCommand(new Commands_utilities.Commands.Prefix);
 
         */
         CommandsManager manager = new CommandsManager("!","help");

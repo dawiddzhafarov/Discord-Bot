@@ -19,7 +19,7 @@ public class Prefix extends Command {
             e.getChannel().sendMessage("Info jak zmienić prompt").queue();
         }else if(message.length == 2){
             prefix = message[1];
-            e.getChannel().sendMessage("Prefix has been changed to: "+ prefix).queue();
+            e.getChannel().sendMessage("Commands.Prefix has been changed to: "+ prefix).queue();
         }
     }
 }
