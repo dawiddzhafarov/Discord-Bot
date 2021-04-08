@@ -43,21 +43,26 @@ public class Bot {
         RoleReactions role = new RoleReactions();
         Prefix prefix = new Prefix(manager);
         Filter filter = new Filter();
-        Kick kick = new Kick();
-        Clear clear = new Clear();
+        //Kick kick = new Kick();
 
+        Clear clear = new Clear();
         Quote quote = new Quote();
+        Kick kick = new Kick();
+        Roles roles = new Roles();
 
         manager.addCommand(quote);
         manager.addCommand(prefix);
+        manager.addCommand(clear);
+        manager.addCommand(kick);
+        manager.addCommand(roles);
 
         jdabuilder.enableIntents(gatewayIntents);
         jdabuilder.addEventListeners(role);
         jdabuilder.addEventListeners(pingpong);
         //jdabuilder.addEventListeners(prefix);
         jdabuilder.addEventListeners(filter);
-        jdabuilder.addEventListeners(kick);
-        jdabuilder.addEventListeners(clear);
+        //jdabuilder.addEventListeners(kick);
+        //jdabuilder.addEventListeners(clear);
         //jdabuilder.addEventListeners(manager);
 
         //jdabuilder.setActivity(Activity.playing("Type: "+manager.getPrefix()+manager.getHelpWord()+ " for command list :D"));
