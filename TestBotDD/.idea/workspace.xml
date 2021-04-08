@@ -22,24 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e70c8b5f-8479-499e-a4dc-1a045b37c20a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/Prefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/Prefix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands_utilities/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/Clear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands_utilities/Kick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/Kick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands_utilities/Prefix.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PingPong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/PingPong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Prefix.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Bot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Commands/Prefix.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Commands/Prefix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Commands_utilities/Clear.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Commands_utilities/Kick.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Commands_utilities/Prefix.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PingPong.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Prefix.class" beforeDir="false" />
-    </list>
+    <list default="true" id="e70c8b5f-8479-499e-a4dc-1a045b37c20a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1617798235181</updated>
       <workItem from="1617798236648" duration="11236000" />
-      <workItem from="1617873684454" duration="4843000" />
+      <workItem from="1617873684454" duration="5133000" />
     </task>
     <servers />
   </component>
