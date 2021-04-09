@@ -49,12 +49,15 @@ public class Bot {
         Quote quote = new Quote();
         Kick kick = new Kick();
         Roles roles = new Roles();
+        Mute mute = new Mute();
+        Spam spam = new Spam();
 
         manager.addCommand(quote);
         manager.addCommand(prefix);
         manager.addCommand(clear);
         manager.addCommand(kick);
         manager.addCommand(roles);
+        manager.addCommand(mute);
 
         jdabuilder.enableIntents(gatewayIntents);
         jdabuilder.addEventListeners(role);
@@ -64,6 +67,7 @@ public class Bot {
         //jdabuilder.addEventListeners(kick);
         //jdabuilder.addEventListeners(clear);
         //jdabuilder.addEventListeners(manager);
+        jdabuilder.addEventListeners(spam);
 
         //jdabuilder.setActivity(Activity.playing("Type: "+manager.getPrefix()+manager.getHelpWord()+ " for command list :D"));
         try {

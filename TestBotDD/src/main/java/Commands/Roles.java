@@ -12,17 +12,16 @@ import java.util.Arrays;
 public class Roles extends Command {
     public Roles(){
         name = "role";
-        help ="This command creates new role, after command prefix enter name of a new role, then numbers(0-255) separated by ',' without spaces!";
+        help ="This command creates new role, after command prefix enter name of a new role, then 3 numbers(0-255) (RGB) separated by ',' without spaces!" +
+                " If you want to delete specific roles, use command: !role del <name> <name>..";
         aliases = Arrays.asList("r","ro");
     }
 
     @Override
     protected void execute(MessageReceivedEvent e) {
-        try {
-            String[] args = e.getMessage().getContentRaw().split("\\s+");
-            if (args.length < 2) {
-                e.getChannel().sendMessage("Specify name for a new role").queue();
-            } else {
+        String[] args = e.getMessage().getContentRaw().split("\\s+");
+        if (!args[1].equalsIgnoreCase("del")){
+            try {
                 RoleAction newrole = e.getGuild().createRole();
                 newrole.setName(args[1]);
                 String[] colors = args[2].split(",");
@@ -34,9 +33,28 @@ public class Roles extends Command {
                 newrole.setColor(color);
                 newrole.complete();
                 //dodac setPermission do argumentów i w kodzie
+            } catch (Exception exc){
+                e.getChannel().sendMessage("Błędne dane").queue();
             }
-        } catch (Exception err){
-            err.printStackTrace();
+        } else {
+            if (args.length == 3) {
+                try {
+                    e.getGuild().getRolesByName(args[2], true).get(0).delete().queue();
+                    e.getChannel().sendMessage("Usunięto rolę " + e.getGuild().getRolesByName(args[2], true).get(0).getName()).queue();
+                } catch (Exception ex){
+                    e.getChannel().sendMessage("Błędne dane!").queue();
+                }
+            } else if ((args.length > 3)){
+                try {
+                    for (int i = 2; i < args.length; i++) {
+                        e.getGuild().getRolesByName(args[i], true).get(0).delete().queue();
+                        e.getChannel().sendMessage("Usunięto rolę " + e.getGuild().getRolesByName(args[i], true).get(0).getName()).queue();
+                    }
+                } catch (Exception ex2){
+                    e.getChannel().sendMessage("Błędne dane!").queue();
+                }
+            }
         }
     }
 }
+
