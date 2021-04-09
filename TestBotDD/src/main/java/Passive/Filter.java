@@ -1,7 +1,9 @@
 package Passive;
 
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.requests.RestAction;
 import net.dv8tion.jda.api.requests.restaction.RoleAction;
 
 import java.awt.*;
@@ -52,6 +54,21 @@ public class Filter extends ListenerAdapter {
                 }
                 if(numberOfBreaches==3){
                     e.getMember().modifyNickname("szatan").queue();
+                    /*
+                    e.getMember().getPermissions().remove(Permission.MESSAGE_WRITE);
+
+                    new java.util.Timer().schedule(
+                            new java.util.TimerTask() {
+                                @Override
+                                public void run() {
+                                    e.getMember().getPermissions().add(Permission.MESSAGE_WRITE);
+                                }
+                            },
+                            50000
+                    );
+
+                nie da się modyfikować getPermision więc to nie działa a i run nie wiem czy jest dobry :/
+                */
                 }
 
                 if (communicat) {
