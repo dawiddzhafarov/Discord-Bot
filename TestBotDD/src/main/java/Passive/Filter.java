@@ -8,7 +8,7 @@ import java.util.*;
 public class Filter extends ListenerAdapter {
     //String[] swears = new String[]{"Cunt", "Fuck", "Motherfucker", "Gash", "Minge", "Prick", "Punani", "Pussy", "Snatch","Twat"};
     static private List<String> swears = new LinkedList<String>(Arrays.asList("cunt", "fuck", "motherfucker", "gash", "minge", "prick", "punani", "pussy", "snatch","twat"));
-    private TreeMap<Integer, String> userMap = new TreeMap<>();
+    private TreeMap<Long, String> userMap = new TreeMap<>();
     //Nie moglem znaleźć nigdzie listy przeklęństw :|
     //plany na później: dodawanie słów, wyłączanie, timeouty?
     static private boolean filter = true;
@@ -27,7 +27,20 @@ public class Filter extends ListenerAdapter {
             }
 
             if (delete) {
-                userMap.put(e.getMessage().getTimeCreated().getHour()*60 +e.getMessage().getTimeCreated().getMinute(),e.getAuthor().getAsTag() );
+                userMap.put(e.getMessage().getTimeCreated().toInstant().toEpochMilli(),e.getAuthor().getAsTag() );
+                int numberOfBreaches = 0;
+                for(Map.Entry<Long,String> entry : userMap.entrySet()) {
+                    if(entry.getKey()+1800000<e.getMessage().getTimeCreated().toInstant().toEpochMilli()){//usuwa wpis jeswli starcszy niż 30 min :P
+                        userMap.remove(entry.getKey());
+                    }
+                    if(entry.getValue().equals(e.getAuthor().getAsTag())){
+                        numberOfBreaches++;
+                    }
+                }
+                if(numberOfBreaches==3){
+                    e.getMember().modifyNickname("szatan").queue();
+                }
+
                 if (communicat) {
                     e.getChannel().sendMessage("Idziesz się zmażyć w piekle za to przekleństwo!").queue();
                     e.getAuthor().openPrivateChannel().queue((privateChannel) -> {
