@@ -3,13 +3,10 @@ package Commands;
 import Commands_utilities.Command;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Quote extends Command {
-    List<String> qouteList = new ArrayList<>();
+    List<String> qouteList = new LinkedList<String>(); //chyba jest szybsze niż arraylist
     private Random rand = new Random();
 
     public Quote() {

@@ -2,6 +2,8 @@
 
 import Commands.*;
 import Commands_utilities.CommandsManager;
+import Passive.Filter;
+import Passive.Spam;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -44,6 +46,7 @@ public class Bot {
         Prefix prefix = new Prefix(manager);
         Filter filter = new Filter();
         //Kick kick = new Kick();
+        FilterManager filterManager = new FilterManager();
 
         Clear clear = new Clear();
         Quote quote = new Quote();
@@ -58,6 +61,7 @@ public class Bot {
         manager.addCommand(kick);
         manager.addCommand(roles);
         manager.addCommand(mute);
+        manager.addCommand(filterManager);
 
         jdabuilder.enableIntents(gatewayIntents);
         jdabuilder.addEventListeners(role);

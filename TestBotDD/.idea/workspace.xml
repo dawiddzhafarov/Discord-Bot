@@ -22,7 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e70c8b5f-8479-499e-a4dc-1a045b37c20a" name="Default Changelist" comment="" />
+    <list default="true" id="e70c8b5f-8479-499e-a4dc-1a045b37c20a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Commands/FilterManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/Quote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Passive/Filter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Spam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Passive/Spam.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,15 +73,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -94,7 +99,8 @@
       <option name="presentableId" value="Default" />
       <updated>1617798235181</updated>
       <workItem from="1617798236648" duration="11236000" />
-      <workItem from="1617873684454" duration="5133000" />
+      <workItem from="1617873684454" duration="6240000" />
+      <workItem from="1617967200972" duration="4391000" />
     </task>
     <servers />
   </component>
@@ -114,10 +120,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="789" y="263" key="#com.intellij.ide.util.MemberChooser" timestamp="1617807495429">
+    <state x="789" y="263" key="#com.intellij.ide.util.MemberChooser" timestamp="1617969320219">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="789" y="263" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1617807495429" />
+    <state x="789" y="263" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1617969320219" />
     <state x="681" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617879365120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -126,21 +132,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="764" y="334" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617800506426" />
-    <state width="1842" height="252" key="GridCell.Tab.0.bottom" timestamp="1617880331683">
+    <state width="1842" height="252" key="GridCell.Tab.0.bottom" timestamp="1617970910597">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617880331683" />
-    <state width="1842" height="252" key="GridCell.Tab.0.center" timestamp="1617880331683">
+    <state width="1842" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617970910597" />
+    <state width="1842" height="252" key="GridCell.Tab.0.center" timestamp="1617970910596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617880331683" />
-    <state width="1842" height="252" key="GridCell.Tab.0.left" timestamp="1617880331682">
+    <state width="1842" height="252" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617970910596" />
+    <state width="1842" height="252" key="GridCell.Tab.0.left" timestamp="1617970910596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617880331682" />
-    <state width="1842" height="252" key="GridCell.Tab.0.right" timestamp="1617880331683">
+    <state width="1842" height="252" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617970910596" />
+    <state width="1842" height="252" key="GridCell.Tab.0.right" timestamp="1617970910596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617880331683" />
+    <state width="1842" height="252" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617970910596" />
+    <state x="483" y="361" key="search.everywhere.popup" timestamp="1617970831078">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="483" y="361" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1617970831078" />
   </component>
 </project>
