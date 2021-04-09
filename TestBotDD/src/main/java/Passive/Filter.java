@@ -2,8 +2,11 @@ package Passive;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.requests.restaction.RoleAction;
 
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public class Filter extends ListenerAdapter {
     //String[] swears = new String[]{"Cunt", "Fuck", "Motherfucker", "Gash", "Minge", "Prick", "Punani", "Pussy", "Snatch","Twat"};
@@ -13,7 +16,17 @@ public class Filter extends ListenerAdapter {
     //plany na później: dodawanie słów, wyłączanie, timeouty?
     static private boolean filter = true;
     static private boolean communicat = true;
+    private RoleAction muteRole;
+
+
     public void onMessageReceived(MessageReceivedEvent e) {
+        if(muteRole==null){
+            muteRole = e.getGuild().createRole();
+            muteRole.setColor(Color.BLACK);
+            muteRole.setName("Muted");
+            //muteRole. próbowałem zabronić pisania na chacie rolą ale chyba się nie da :V
+
+        }
         if (!e.getAuthor().isBot() && filter) {
             String message = e.getMessage().getContentRaw().toLowerCase();
             boolean delete = false;
