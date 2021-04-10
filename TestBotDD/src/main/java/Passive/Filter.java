@@ -66,11 +66,13 @@ public class Filter extends ListenerAdapter {
                                 public void run() {
                                     //e.getMember().getPermissions().add(Permission.MESSAGE_WRITE);
                                     //e.getGuild().getGuildChannelById(e.getChannel().getId()).createPermissionOverride((IPermissionHolder) e.getMember()).grant(Permission.MESSAGE_WRITE).queue();
-                                    e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) e.getMember()).grant(Permission.MESSAGE_WRITE).queue();
+                                    //e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) e.getMember()).grant(Permission.MESSAGE_WRITE).queue();
+                                    e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) e.getMember()).clear(Permission.MESSAGE_WRITE).queue();
+                                    System.out.println("Zwracam prawo: "+e.getMember().getUser().getName());
                                     return;
                                 }
                             },
-                            5000
+                            20000
                     );
 
                 //nie da się modyfikować getPermision więc to nie działa a i run nie wiem czy jest dobry :/

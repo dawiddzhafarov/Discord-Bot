@@ -23,8 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e70c8b5f-8479-499e-a4dc-1a045b37c20a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_30_1_1_jre.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_8_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TestBot.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Passive/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Passive/Filter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Passive/Spam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Passive/Spam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Spam.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,17 +78,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Bot" />
@@ -97,6 +95,7 @@
       <workItem from="1617798236648" duration="11236000" />
       <workItem from="1617873684454" duration="6240000" />
       <workItem from="1617967200972" duration="12905000" />
+      <workItem from="1618050389132" duration="1956000" />
     </task>
     <servers />
   </component>
@@ -128,22 +127,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="764" y="334" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617800506426" />
-    <state width="1842" height="252" key="GridCell.Tab.0.bottom" timestamp="1617995997875">
+    <state width="1842" height="252" key="GridCell.Tab.0.bottom" timestamp="1618051706056">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617995997875" />
-    <state width="1842" height="252" key="GridCell.Tab.0.center" timestamp="1617995997875">
+    <state width="1842" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618051706056" />
+    <state width="1842" height="252" key="GridCell.Tab.0.center" timestamp="1618051706056">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617995997875" />
-    <state width="1842" height="252" key="GridCell.Tab.0.left" timestamp="1617995997875">
+    <state width="1842" height="252" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618051706056" />
+    <state width="1842" height="252" key="GridCell.Tab.0.left" timestamp="1618051706056">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617995997875" />
-    <state width="1842" height="252" key="GridCell.Tab.0.right" timestamp="1617995997875">
+    <state width="1842" height="252" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618051706056" />
+    <state width="1842" height="252" key="GridCell.Tab.0.right" timestamp="1618051706056">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617995997875" />
+    <state width="1842" height="252" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618051706056" />
     <state width="1842" height="312" key="GridCell.Tab.1.bottom" timestamp="1617994018323">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
