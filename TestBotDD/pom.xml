@@ -34,6 +34,13 @@
             <version>4.2.0_233</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1.1-jre</version>
+        </dependency>
+
+
         <!--
         <dependency>
             <groupId>net.dv8tion</groupId>
