@@ -2,26 +2,32 @@ package Passive;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
+import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.entities.IPermissionHolder;
+import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.requests.restaction.RoleAction;
 
+import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.List;
 
 
 public class Spam extends ListenerAdapter {
-    ListMultimap<String, String> multimap = ArrayListMultimap.create();
-    final long roleid = 830377700417994772L; //id roli bez mozliwosci pisania
-    final long everyoneid = 818109491005358111L; //id roli @everyone
-    String name;
-    String time;
-    /* w sumie nie wiem jak to dziala na discordzie zrobilem tak ze jesli ta sama osoba wysle wiadomosc 5 razy i czas od pierwszej do ostatniej
-    bedzie mniejszy niz 4sek to przypisuje tego uzytkownika do roli muted ktora nic nie moze robic ALE
-    nie wiem czemu dalej moge pisac z tego "zmutowanego" konta choc już powiadomienia nie przychodzą, może widzę to bo jestem adminem?
-    Jesli tak to zostawimy to bedzie trzeba dodac do klasy roles mozliwosc usuniecia tej roli zeby ktos mogl dalej pisac
-    albo wymyslic cos zupelnie innego/ jakiegos cooldowny na ktore nie znalazlem jeszcze sposobu
-    w kazdym razie mozesz sobie przejrzec i ogarnac jak to dziala, moze akurat ty na cos lepszego wpadniesz ;)
-     */
+    private static ListMultimap<String, String> multimap = ArrayListMultimap.create();
+    private final long roleid = 830377700417994772L; //id roli bez mozliwosci pisania
+    private HashMap breaches = new HashMap();
+
+    private String name;
+    private String time;
+    static private int messages_limit = 5;
+    static private int time_exceed = 4;
+    private Role mutedRole;
+    private static int limit = 5;
+
+
 
     public void onMessageReceived(MessageReceivedEvent e){
         if(e.getAuthor().getName().equals("TestBot123456")){
@@ -37,16 +43,43 @@ public class Spam extends ListenerAdapter {
 
     }
     public void spamcheck(String name, MessageReceivedEvent e){
-        List times = multimap.get(name);
-        if(multimap.get(name).size() > 5){
+
+
+        if(multimap.get(name).size() > messages_limit){ //5
             multimap.get(name).remove(0);
         }
-        if (times.size() >= 5) {
-            long end = Long.parseLong((String)times.get(4)); //timesLen-1
+        System.out.println(messages_limit);
+        List times = multimap.get(name);
+        int timesLen = times.size();
+        System.out.println(times);
+        System.out.println(timesLen);
+        if (timesLen >= messages_limit) { //5
+            long end = Long.parseLong((String)times.get(timesLen-1)); //timesLen-1 /4
             long start = Long.parseLong((String) times.get(0)); //timesLen-5
-            if((end-start) <= 4){
-                e.getGuild().addRoleToMember(e.getMember().getId(), e.getJDA().getRoleById(roleid)).queue();
-                e.getChannel().sendMessage("Użytkownik "+ name+ " został wyciszony za spam").queue();
+            if((end-start) <= time_exceed){
+                //e.getGuild().addRoleToMember(e.getMember().getId(), e.getJDA().getRoleById(roleid)).queue();
+                if(mutedRole == null){
+                    RoleAction mutedRoleUp;
+                    mutedRoleUp = e.getGuild().createRole().setColor(Color.BLACK).setName("Muted for Spam");
+                    mutedRole = mutedRoleUp.complete();
+                    e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) mutedRole).deny(Permission.MESSAGE_WRITE).queue();
+                }
+                if(breaches.get(e.getAuthor().getName()) == null) {
+                    breaches.put(e.getAuthor().getName(), 1);
+                    e.getChannel().sendMessage("To twoje pierwsze ostrzeżenie! Nie spamuj!").queue();
+                } else {
+                    //int nr_of_breaches = Integer.parseInt((String) breaches.get(e.getAuthor().getName()));//if exist
+                    int nr_of_breaches = (int) breaches.get(e.getAuthor().getName());
+                    nr_of_breaches++;
+                    breaches.put(e.getAuthor().getName(), nr_of_breaches);
+                    e.getChannel().sendMessage("To Twoje kolejne ostrzeżenie za spam, za "+limit+ " ostrzeżenia czeka Cię wyciszenie!").queue();
+                    if(nr_of_breaches == limit){
+                        e.getGuild().addRoleToMember(e.getMember().getId(), mutedRole).queue();
+                        e.getChannel().sendMessage("Użytkownik "+ name+ " został wyciszony za spam").queue();
+                    }
+                }
+                //e.getGuild().addRoleToMember(e.getMember().getId(), mutedRole).queue();
+                //e.getChannel().sendMessage("Użytkownik "+ name+ " został wyciszony za spam").queue();
             }
         }
     }
@@ -57,5 +90,15 @@ public class Spam extends ListenerAdapter {
         long timestamp = System.currentTimeMillis() / 1000;
         //return sdf.format(cal.getTime());
         return Long.toString(timestamp);
+    }
+    public static void setMessages(int nr_mess){
+        messages_limit = nr_mess;
+        multimap.clear();
+    }
+    public static void setTime_exceed(int nr_time){
+        time_exceed = nr_time;
+    }
+    public static void setBreachesLimit(int nr_breaches){
+        limit = nr_breaches;
     }
 }

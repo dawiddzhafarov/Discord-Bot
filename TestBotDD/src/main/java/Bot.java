@@ -47,6 +47,7 @@ public class Bot {
         Filter filter = new Filter();
         //Kick kick = new Kick();
         FilterManager filterManager = new FilterManager();
+        SpamManager spamManager = new SpamManager();
 
         Clear clear = new Clear();
         Quote quote = new Quote();
@@ -62,6 +63,7 @@ public class Bot {
         manager.addCommand(roles);
         manager.addCommand(mute);
         manager.addCommand(filterManager);
+        manager.addCommand(spamManager);
 
         jdabuilder.enableIntents(gatewayIntents);
         jdabuilder.addEventListeners(role);
