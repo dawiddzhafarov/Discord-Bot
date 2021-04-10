@@ -44,6 +44,17 @@ public class FilterManager  extends Command {
                 Filter.setFilter(!Filter.isFilter());
             }
 
+        }else if(message[1].equalsIgnoreCase("mutedtime")){
+            Filter.clearMutedTime();
+            for(int i = 2; i<message.length;i++) {
+                try {
+                    Filter.setMutedTime(Double.valueOf(message[i]));
+                }catch (Exception IllegalArgumentException){
+                    e.getChannel().sendMessage("zepsułeś debilu wpisz poprawne dane").queue();
+                    break;
+                }
+
+            }
         }
     }
 }

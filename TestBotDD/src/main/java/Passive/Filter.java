@@ -2,6 +2,7 @@ package Passive;
 
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.IPermissionHolder;
+import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.RestAction;
@@ -19,14 +20,25 @@ public class Filter extends ListenerAdapter {
     //plany na później: dodawanie słów, wyłączanie, timeouty?
     static private boolean filter = true;
     static private boolean communicat = true;
-    private RoleAction muteRole;
+    static private List<Double> mutedTime = new LinkedList<>();
+    private Role muteRole;
 
+    public Filter() {
+        mutedTime.add(0.5);
+        mutedTime.add(1.);
+        mutedTime.add(5.);
+
+    }
 
     public void onMessageReceived(MessageReceivedEvent e) {
         if(muteRole==null){
-            muteRole = e.getGuild().createRole();
-            muteRole.setColor(Color.BLACK);
-            muteRole.setName("Muted");
+            RoleAction muteRoleBuild;
+            muteRoleBuild = e.getGuild().createRole();
+            muteRoleBuild.setColor(Color.BLACK);
+            muteRoleBuild.setName("Muted");
+            muteRole = muteRoleBuild.complete();
+            e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) muteRole).deny(Permission.MESSAGE_WRITE).queue();
+
             //muteRole. próbowałem zabronić pisania na chacie rolą ale chyba się nie da :V
 
         }
@@ -53,12 +65,13 @@ public class Filter extends ListenerAdapter {
                         numberOfBreaches++;
                     }
                 }
-                if(numberOfBreaches>=3){
+                if(numberOfBreaches!=0 && mutedTime.get(numberOfBreaches-1)!=null){
                     e.getMember().modifyNickname("szatan").queue();
 
                     //e.getMember().getPermissions().remove(Permission.MESSAGE_WRITE);
                     //e.getGuild().getGuildChannelById(e.getChannel().getId()).createPermissionOverride((IPermissionHolder) e.getMember()).deny(Permission.MESSAGE_WRITE).queue();
-                    e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) e.getMember()).deny(Permission.MESSAGE_WRITE).queue();
+                    e.getGuild().addRoleToMember(e.getMember(),muteRole).queue();
+                    //e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) e.getMember()).deny(Permission.MESSAGE_WRITE).queue();
 
                     new java.util.Timer().schedule(
                             new java.util.TimerTask() {
@@ -67,16 +80,20 @@ public class Filter extends ListenerAdapter {
                                     //e.getMember().getPermissions().add(Permission.MESSAGE_WRITE);
                                     //e.getGuild().getGuildChannelById(e.getChannel().getId()).createPermissionOverride((IPermissionHolder) e.getMember()).grant(Permission.MESSAGE_WRITE).queue();
                                     //e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) e.getMember()).grant(Permission.MESSAGE_WRITE).queue();
-                                    e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) e.getMember()).clear(Permission.MESSAGE_WRITE).queue();
+                                    //e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) e.getMember()).clear(Permission.MESSAGE_WRITE).queue();
+                                    e.getGuild().removeRoleFromMember(e.getMember(),muteRole).queue();
+                                    muteRole.getManager().setName("inna nazwa").complete();
                                     System.out.println("Zwracam prawo: "+e.getMember().getUser().getName());
                                     return;
                                 }
-                            },
-                            20000
+                            },(int) (mutedTime.get(numberOfBreaches-1)*60000)
+
                     );
 
                 //nie da się modyfikować getPermision więc to nie działa a i run nie wiem czy jest dobry :/
 
+                }else if(mutedTime.size()<numberOfBreaches){
+                    e.getMember().kick().queue();
                 }
 
                 if (communicat) {
@@ -114,4 +131,12 @@ public class Filter extends ListenerAdapter {
     public static boolean isCommunicat() {
         return communicat;
     }
+
+    public static void setMutedTime(Double time) {
+        mutedTime.add(time);
+    }
+    public static void clearMutedTime() {
+        mutedTime.clear();
+    }
+
 }
