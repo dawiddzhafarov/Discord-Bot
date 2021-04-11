@@ -10,18 +10,16 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.restaction.RoleAction;
 
 import java.awt.*;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
 
 
 public class Spam extends ListenerAdapter {
     private static ListMultimap<String, String> multimap = ArrayListMultimap.create();
-    private final long roleid = 830377700417994772L; //id roli bez mozliwosci pisania
     private HashMap breaches = new HashMap();
 
-    private String name;
-    private String time;
+    //private String name;
+    //private String time;
     static private int messages_limit = 5;
     static private int time_exceed = 4;
     private Role mutedRole;
@@ -35,32 +33,32 @@ public class Spam extends ListenerAdapter {
         } else {
             String user = e.getAuthor().getName();
             String acttime = getTime();
-            name = user;
-            time = acttime;
+            //name = user;
+            //time = acttime;
             multimap.put(user, acttime);
             spamcheck(e.getAuthor().getName(), e);
         }
-
     }
     public void spamcheck(String name, MessageReceivedEvent e){
-
-
         if(multimap.get(name).size() > messages_limit){ //5
             multimap.get(name).remove(0);
         }
-        System.out.println(messages_limit);
         List times = multimap.get(name);
         int timesLen = times.size();
-        System.out.println(times);
-        System.out.println(timesLen);
         if (timesLen >= messages_limit) { //5
-            long end = Long.parseLong((String)times.get(timesLen-1)); //timesLen-1 /4
-            long start = Long.parseLong((String) times.get(0)); //timesLen-5
+            long end = Long.parseLong((String)times.get(timesLen-1));
+            long start = Long.parseLong((String) times.get(0));
             if((end-start) <= time_exceed){
-                //e.getGuild().addRoleToMember(e.getMember().getId(), e.getJDA().getRoleById(roleid)).queue();
+                try {
+                    List<Role> roles = e.getGuild().getRolesByName("mutedforspam", true);
+                    Role role = roles.get(0);
+                    mutedRole = role;
+                } catch (Exception exc) {
+                    exc.printStackTrace();
+                }
                 if(mutedRole == null){
                     RoleAction mutedRoleUp;
-                    mutedRoleUp = e.getGuild().createRole().setColor(Color.BLACK).setName("Muted for Spam");
+                    mutedRoleUp = e.getGuild().createRole().setColor(Color.BLACK).setName("MutedForSpam");
                     mutedRole = mutedRoleUp.complete();
                     e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) mutedRole).deny(Permission.MESSAGE_WRITE).queue();
                 }
@@ -68,7 +66,6 @@ public class Spam extends ListenerAdapter {
                     breaches.put(e.getAuthor().getName(), 1);
                     e.getChannel().sendMessage("To twoje pierwsze ostrzeżenie! Nie spamuj!").queue();
                 } else {
-                    //int nr_of_breaches = Integer.parseInt((String) breaches.get(e.getAuthor().getName()));//if exist
                     int nr_of_breaches = (int) breaches.get(e.getAuthor().getName());
                     nr_of_breaches++;
                     breaches.put(e.getAuthor().getName(), nr_of_breaches);
@@ -78,17 +75,12 @@ public class Spam extends ListenerAdapter {
                         e.getChannel().sendMessage("Użytkownik "+ name+ " został wyciszony za spam").queue();
                     }
                 }
-                //e.getGuild().addRoleToMember(e.getMember().getId(), mutedRole).queue();
-                //e.getChannel().sendMessage("Użytkownik "+ name+ " został wyciszony za spam").queue();
             }
         }
     }
 
     public String getTime() {
-        Calendar cal = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         long timestamp = System.currentTimeMillis() / 1000;
-        //return sdf.format(cal.getTime());
         return Long.toString(timestamp);
     }
     public static void setMessages(int nr_mess){
