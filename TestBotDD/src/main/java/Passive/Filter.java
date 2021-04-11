@@ -24,6 +24,7 @@ public class Filter extends ListenerAdapter {
     static private boolean communicat = true;
     static private boolean kick = false;
     static private boolean ban = false;
+    static private double timePeriode = 30;
 
     static private List<Double> mutedTime = new LinkedList<>();
     private Role muteRole;
@@ -92,7 +93,7 @@ public class Filter extends ListenerAdapter {
                 userMap.put(e.getMessage().getTimeCreated().toInstant().toEpochMilli(),e.getAuthor().getAsTag() );
                 int numberOfBreaches = 0;
                 for(Map.Entry<Long,String> entry : userMap.entrySet()) {
-                    if(entry.getKey()+1800000<e.getMessage().getTimeCreated().toInstant().toEpochMilli()){//usuwa wpis jeswli starcszy niż 30 min :P
+                    if(entry.getKey()+timePeriode*60000<e.getMessage().getTimeCreated().toInstant().toEpochMilli()){//usuwa wpis jeswli starcszy niż 30 min :P
                         userMap.remove(entry.getKey());
                     }
                     if(entry.getValue().equals(e.getAuthor().getAsTag())){
@@ -148,9 +149,9 @@ public class Filter extends ListenerAdapter {
                 }
 
                 if (communicat) {
-                    e.getChannel().sendMessage("Idziesz się zmażyć w piekle za to przekleństwo!").queue();
+                    e.getChannel().sendMessage(e.getAuthor().getName()+" we don't tolerate such words on this server!").queue();
                     e.getAuthor().openPrivateChannel().queue((privateChannel) -> {
-                        privateChannel.sendMessage(swearList.toString()).queue();
+                        privateChannel.sendMessage("We don't tolerate such words on this server: "+swearList.toString()).queue();
                     });
                 }
                 //e.getMember().getUser().openPrivateChannel().queue((privateChannel) -> {privateChannel.sendMessage(swearList.toString()).queue();});
@@ -183,11 +184,43 @@ public class Filter extends ListenerAdapter {
         return communicat;
     }
 
-    public static void setMutedTime(Double time) {
-        mutedTime.add(time);
+    public static void setMutedTime(List<Double> time) {
+        mutedTime = time;
     }
     public static void clearMutedTime() {
         mutedTime.clear();
+    }
+
+    public static boolean isKick() {
+        return kick;
+    }
+
+    public static void setKick(boolean kick) {
+        Filter.kick = kick;
+    }
+
+    public static boolean isBan() {
+        return ban;
+    }
+
+    public static void setBan(boolean ban) {
+        Filter.ban = ban;
+    }
+
+    public static List<String> getSwears() {
+        return swears;
+    }
+
+    public static double getTimePeriode() {
+        return timePeriode;
+    }
+
+    public static void setTimePeriode(double timePeriode) {
+        Filter.timePeriode = timePeriode;
+    }
+
+    public static List<Double> getMutedTime() {
+        return mutedTime;
     }
 
 }

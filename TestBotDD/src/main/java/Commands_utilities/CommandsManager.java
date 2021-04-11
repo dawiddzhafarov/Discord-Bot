@@ -34,16 +34,25 @@ public class CommandsManager extends ListenerAdapter {
                 EmbedBuilder info = new EmbedBuilder();
                 info.setTitle("Command list");
                 info.setDescription("Jakieś info o tym bocie");
-                for (Command command : commands) {
-                    info.addField(command.getName()+command.getAliases(),command.getHelp(),false);
-                }
-                //info.addField("Twórcy","TurboFirma",false);
                 info.setColor(0xd4901c);
                 MessageEmbed embed = info.build(); //musiałem to zrobić tutaj bo inaczej nie działało :V
                 e.getAuthor().openPrivateChannel().queue((privateChannel) -> {
                     privateChannel.sendMessage(embed).queue();
                 });
                 info.clear();
+                for (Command command : commands) {
+                    EmbedBuilder commandInfo = new EmbedBuilder();
+                    commandInfo.setTitle(command.getName());
+                    commandInfo.setDescription(command.getAliases().toString());
+                    commandInfo.addField(command.getName()+" Info",command.getHelp(),false);
+                    commandInfo.setColor(0xd4901c);
+                    MessageEmbed commandEmbed = commandInfo.build(); //musiałem to zrobić tutaj bo inaczej nie działało :V
+                    e.getAuthor().openPrivateChannel().queue((privateChannel) -> {
+                        privateChannel.sendMessage(commandEmbed).queue();
+                    });
+                    info.clear();
+                }
+                //info.addField("Twórcy","TurboFirma",false);
             }
             else {
                 //e.getChannel().sendMessage("jakies info o qoute").queue();
