@@ -1,7 +1,9 @@
 package Passive;
 
 import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.entities.GuildChannel;
 import net.dv8tion.jda.api.entities.IPermissionHolder;
+import net.dv8tion.jda.api.entities.PermissionOverride;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -20,6 +22,9 @@ public class Filter extends ListenerAdapter {
     //plany na później: dodawanie słów, wyłączanie, timeouty?
     static private boolean filter = true;
     static private boolean communicat = true;
+    static private boolean kick = false;
+    static private boolean ban = false;
+
     static private List<Double> mutedTime = new LinkedList<>();
     private Role muteRole;
 
@@ -32,14 +37,43 @@ public class Filter extends ListenerAdapter {
 
     public void onMessageReceived(MessageReceivedEvent e) {
         if(muteRole==null){
-            RoleAction muteRoleBuild;
-            muteRoleBuild = e.getGuild().createRole();
-            muteRoleBuild.setColor(Color.BLACK);
-            muteRoleBuild.setName("Muted");
-            muteRole = muteRoleBuild.complete();
-            e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) muteRole).deny(Permission.MESSAGE_WRITE).queue();
+            for(Role role : e.getGuild().getRoles()){
+                if(role.getName().equals("MutedForInappropriateLanguage")){
+                    muteRole = role;
+                    break;
+                }
+            }
+            if(muteRole==null) {
+                RoleAction muteRoleBuild;
+                muteRoleBuild = e.getGuild().createRole();
+                muteRoleBuild.setColor(Color.BLACK);
+                muteRoleBuild.setName("MutedForInappropriateLanguage");
+                muteRole = muteRoleBuild.complete();
 
-            //muteRole. próbowałem zabronić pisania na chacie rolą ale chyba się nie da :V
+
+                for (GuildChannel channel : e.getGuild().getChannels()) {
+                    channel.upsertPermissionOverride((IPermissionHolder) muteRole).deny(Permission.MESSAGE_WRITE).queue();
+                }
+            /*
+            boolean first = false;
+            List<Role> roles = e.getGuild().getRoles();
+            for(Role role : roles){
+                //role.getPermissions().contains(Permission.MESSAGE_WRITE);
+                for(GuildChannel channel : e.getGuild().getChannels()){
+                    List<PermissionOverride> permissionOverridesList = channel.getRolePermissionOverrides();
+
+                }
+                if(role.getPermissionsRaw()==muteRole.getPermissionsRaw()){
+                    if(first) {
+                        muteRole.delete().queue();
+                        muteRole = role;
+                        break;
+                    }
+                    first=true;
+                }
+            }
+            */
+            }
 
         }
         if (!e.getAuthor().isBot() && filter) {
@@ -66,7 +100,7 @@ public class Filter extends ListenerAdapter {
                     }
                 }
                 if(numberOfBreaches!=0 && mutedTime.get(numberOfBreaches-1)!=null){
-                    e.getMember().modifyNickname("szatan").queue();
+                    //e.getMember().modifyNickname("szatan").queue();
 
                     //e.getMember().getPermissions().remove(Permission.MESSAGE_WRITE);
                     //e.getGuild().getGuildChannelById(e.getChannel().getId()).createPermissionOverride((IPermissionHolder) e.getMember()).deny(Permission.MESSAGE_WRITE).queue();
@@ -82,7 +116,6 @@ public class Filter extends ListenerAdapter {
                                     //e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) e.getMember()).grant(Permission.MESSAGE_WRITE).queue();
                                     //e.getGuild().getGuildChannelById(e.getChannel().getId()).upsertPermissionOverride((IPermissionHolder) e.getMember()).clear(Permission.MESSAGE_WRITE).queue();
                                     e.getGuild().removeRoleFromMember(e.getMember(),muteRole).queue();
-                                    muteRole.getManager().setName("inna nazwa").complete();
                                     System.out.println("Zwracam prawo: "+e.getMember().getUser().getName());
                                     return;
                                 }
@@ -93,7 +126,25 @@ public class Filter extends ListenerAdapter {
                 //nie da się modyfikować getPermision więc to nie działa a i run nie wiem czy jest dobry :/
 
                 }else if(mutedTime.size()<numberOfBreaches){
-                    e.getMember().kick().queue();
+                    if(kick) {
+                        if(ban) {
+                            e.getMember().ban(0,"For multiple filter breaches");
+                        }else {
+                            e.getMember().kick().queue();
+                        }
+                    }else{
+                        e.getGuild().addRoleToMember(e.getMember(),muteRole).queue();
+                        new java.util.Timer().schedule(
+                                new java.util.TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        e.getGuild().removeRoleFromMember(e.getMember(),muteRole).queue();
+                                        System.out.println("Zwracam prawo: "+e.getMember().getUser().getName());
+                                        return;
+                                    }
+                                },((int) (mutedTime.get(mutedTime.size())-1)*60000)
+                        );
+                    }
                 }
 
                 if (communicat) {

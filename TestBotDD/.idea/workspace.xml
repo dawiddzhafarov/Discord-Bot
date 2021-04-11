@@ -24,7 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e70c8b5f-8479-499e-a4dc-1a045b37c20a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/FilterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/FilterManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Passive/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Passive/Filter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,15 +69,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,7 +97,8 @@
       <workItem from="1617798236648" duration="11236000" />
       <workItem from="1617873684454" duration="6240000" />
       <workItem from="1617967200972" duration="12905000" />
-      <workItem from="1618050389132" duration="7536000" />
+      <workItem from="1618050389132" duration="9246000" />
+      <workItem from="1618142819268" duration="5450000" />
     </task>
     <servers />
   </component>
@@ -132,55 +130,80 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="764" y="334" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617800506426" />
-    <state width="1842" height="252" key="GridCell.Tab.0.bottom" timestamp="1618062068490">
+    <state width="1842" height="252" key="GridCell.Tab.0.bottom" timestamp="1618146147707">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618062068490" />
-    <state width="1842" height="252" key="GridCell.Tab.0.center" timestamp="1618062068490">
+    <state width="1842" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618146147707" />
+    <state width="1842" height="252" key="GridCell.Tab.0.center" timestamp="1618146147707">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618062068490" />
-    <state width="1842" height="252" key="GridCell.Tab.0.left" timestamp="1618062068490">
+    <state width="1842" height="252" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618146147707" />
+    <state width="1842" height="252" key="GridCell.Tab.0.left" timestamp="1618146147706">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618062068490" />
-    <state width="1842" height="252" key="GridCell.Tab.0.right" timestamp="1618062068490">
+    <state width="1842" height="252" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618146147706" />
+    <state width="1842" height="252" key="GridCell.Tab.0.right" timestamp="1618146147707">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="252" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618062068490" />
-    <state width="1842" height="312" key="GridCell.Tab.1.bottom" timestamp="1617994018323">
+    <state width="1842" height="252" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618146147707" />
+    <state width="1842" height="312" key="GridCell.Tab.1.bottom" timestamp="1618145913615">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617994018323" />
-    <state width="1842" height="312" key="GridCell.Tab.1.center" timestamp="1617994018323">
+    <state width="1842" height="312" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618145913615" />
+    <state width="1842" height="312" key="GridCell.Tab.1.center" timestamp="1618145913614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617994018323" />
-    <state width="1842" height="312" key="GridCell.Tab.1.left" timestamp="1617994018323">
+    <state width="1842" height="312" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618145913614" />
+    <state width="1842" height="312" key="GridCell.Tab.1.left" timestamp="1618145913614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617994018323" />
-    <state width="1842" height="312" key="GridCell.Tab.1.right" timestamp="1617994018323">
+    <state width="1842" height="312" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618145913614" />
+    <state width="1842" height="312" key="GridCell.Tab.1.right" timestamp="1618145913614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617994018323" />
-    <state x="483" y="361" key="search.everywhere.popup" timestamp="1617970831078">
+    <state width="1842" height="312" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618145913614" />
+    <state x="483" y="361" width="672" height="678" key="search.everywhere.popup" timestamp="1618143986702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="483" y="361" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1617970831078" />
+    <state x="483" y="361" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1618143986702" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Passive/Filter.java</url>
-          <line>68</line>
+          <line>102</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Passive/Filter.java</url>
-          <line>79</line>
+          <line>113</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Passive/Filter.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Passive/Filter.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Passive/Filter.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Passive/Filter.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Passive/Filter.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
