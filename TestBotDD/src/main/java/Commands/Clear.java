@@ -11,7 +11,8 @@ public class Clear extends Command {
 
     public Clear(){
         name = "clear";
-        help = "Use !clear <0-100 to delete certain amount of messages.";
+        help = "Use !clear <0-100> to delete certain amount of messages."+"\n"+
+        "For example: !clear 4   will delete 4 messages couting the send command.";
         aliases = Arrays.asList("clc", "c");
     }
     @Override

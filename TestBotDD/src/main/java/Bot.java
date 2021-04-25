@@ -4,6 +4,7 @@ import Commands.*;
 import Commands_utilities.CommandsManager;
 import Passive.CustomCommandsSniffer;
 import Passive.Filter;
+import Passive.RoleReactions;
 import Passive.Spam;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -67,6 +68,7 @@ public class Bot {
         SkipAudio skipAudio = new SkipAudio();
         Leave leave = new Leave();
         CustomCommands customCommands = new CustomCommands();
+        RolePost rolePost = new RolePost();
 
 
         manager.addCommand(leave);
@@ -83,6 +85,7 @@ public class Bot {
         manager.addCommand(filterManager);
         manager.addCommand(spamManager);
         manager.addCommand(customCommands);
+        manager.addCommand(rolePost);
       //  jdabuilder.disableCache(EnumSet.of(
        //         CacheFlag.CLIENT_STATUS,
         //        CacheFlag.ACTIVITY,
