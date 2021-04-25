@@ -1,10 +1,8 @@
 package Commands;
 
 import Commands_utilities.Command;
-import Commands_utilities.CommandsManager;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,9 +11,8 @@ public class Clear extends Command {
 
     public Clear(){
         name = "clear";
-        help = "This command clears inserted amount of messages";
+        help = "Use !clear <0-100 to delete certain amount of messages.";
         aliases = Arrays.asList("clc", "c");
-
     }
     @Override
     protected void execute(MessageReceivedEvent e){

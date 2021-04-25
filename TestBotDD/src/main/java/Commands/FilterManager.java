@@ -3,15 +3,10 @@ package Commands;
 import Commands_utilities.Command;
 import Passive.Filter;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-
-
 public class FilterManager  extends Command {
-
-
 
     public FilterManager() {
         name = "filter";
@@ -33,7 +28,6 @@ public class FilterManager  extends Command {
                 "After their 6+ breach user will be:"+"\n"+ "If kick=off timeout for 18 minutes"+"\n"+ "If kick=on but ban=off kicked "+"\n"+"If kick=on but ban=on banned"+"\n"+
                 "Type "+Prefix.prefix+"filter list for list of banned words";
         aliases = Arrays.asList("f","flt");
-
     }
 
     @Override
@@ -136,8 +130,6 @@ public class FilterManager  extends Command {
                     e.getChannel().sendMessage("Please use use format provided in following example: !filter period 0.2").queue();
                 }
             }
-
-
         }
     }
 }

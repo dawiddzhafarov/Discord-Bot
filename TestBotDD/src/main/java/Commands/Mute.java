@@ -4,7 +4,6 @@ import Commands_utilities.Command;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-
 import java.util.Arrays;
 
 public class Mute extends Command {
@@ -12,7 +11,6 @@ public class Mute extends Command {
         name = "mute";
         help = "Use !mute @Member to mute specific user. Use !mute -1 @Member to unmute specific user";
         aliases = Arrays.asList("m", "mu");
-
     }
     @Override
     protected void execute(MessageReceivedEvent e){

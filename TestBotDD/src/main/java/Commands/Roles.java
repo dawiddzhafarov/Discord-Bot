@@ -5,17 +5,15 @@ import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.requests.restaction.RoleAction;
-
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Roles extends Command {
     public Roles() {
         name = "role";
-        help = "This command creates new role: Type !role create <RoleName> 100,100,100 to create new role and set it's color to RGB:100,100,100" +
-                "Type !role remove <RoleName> @mentionedUsers to remove role from users. Type !role delete <RoleNames> to delete roles from server";
+        help = "Use !role <RoleName> 100,100,100 to create a role and set it's color to RGB:100,100,100" +
+                "Use !role remove <RoleName> @mentionedUsers to remove role from users. Use !role delete <RoleNames> to delete roles from the server";
         aliases = Arrays.asList("r", "ro");
     }
 

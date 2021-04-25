@@ -4,15 +4,13 @@ import Commands_utilities.Command;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
 import java.util.Arrays;
 
 public class Kick extends Command {
 
     public Kick() {
         name = "kick";
-        help = "This command kicks mentioned users";
+        help = "Use !kick @users to kick mentioned users. Works if you have specific permissions.";
         aliases = Arrays.asList("k");
     }
     @Override

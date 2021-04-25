@@ -2,10 +2,7 @@ package Commands;
 
 import Commands_utilities.Command;
 import Commands_utilities.CommandsManager;
-import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
 import java.util.Arrays;
 
 public class Prefix extends Command {
@@ -14,8 +11,8 @@ public class Prefix extends Command {
 
     public Prefix(CommandsManager manager){
         name = "prefix";
-        help = "This commend allows to change prefix.";
-        aliases = Arrays.asList("p","dynksprzedkomenda");
+        help = "Use !prefix <symbol/s> to change prefix.";
+        aliases = Arrays.asList("p","pref");
         prefix = manager.getPrefix();
         this.manager = manager;
     }

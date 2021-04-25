@@ -8,6 +8,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
+import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 import javax.security.auth.login.LoginException;
 import java.util.ArrayList;
@@ -22,6 +23,9 @@ public class Bot {
         jda = null;
         List<GatewayIntent> gatewayIntents = new ArrayList<>();
         gatewayIntents.add(GatewayIntent.GUILD_MEMBERS);
+        gatewayIntents.add(GatewayIntent.GUILD_MESSAGES);
+        gatewayIntents.add(GatewayIntent.GUILD_VOICE_STATES);
+
         /*
         straciłem cierpliwość wiec albo znajdziemy sposób na naprawę tego albo stworzymy własną wersję :P
         CommandClientBuilder builder = new CommandClientBuilder();
@@ -55,7 +59,17 @@ public class Bot {
         Roles roles = new Roles();
         Mute mute = new Mute();
         Spam spam = new Spam();
+        PlayAudio play = new PlayAudio();
+        Join join = new Join();
+        StopAudio stop = new StopAudio();
+        SkipAudio skipAudio = new SkipAudio();
+        Leave leave = new Leave();
 
+        manager.addCommand(leave);
+        manager.addCommand(skipAudio);
+        manager.addCommand(stop);
+        manager.addCommand(join);
+        manager.addCommand(play);
         manager.addCommand(quote);
         manager.addCommand(prefix);
         manager.addCommand(clear);
@@ -64,7 +78,12 @@ public class Bot {
         manager.addCommand(mute);
         manager.addCommand(filterManager);
         manager.addCommand(spamManager);
-
+      //  jdabuilder.disableCache(EnumSet.of(
+       //         CacheFlag.CLIENT_STATUS,
+        //        CacheFlag.ACTIVITY,
+        //        CacheFlag.EMOTE
+       // ));
+        jdabuilder.enableCache(CacheFlag.VOICE_STATE);
         jdabuilder.enableIntents(gatewayIntents);
         jdabuilder.addEventListeners(role);
         jdabuilder.addEventListeners(pingpong);

@@ -8,7 +8,6 @@ import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.restaction.RoleAction;
-
 import java.awt.*;
 import java.util.*;
 import java.util.List;
@@ -17,26 +16,22 @@ import java.util.List;
 public class Spam extends ListenerAdapter {
     private static ListMultimap<String, String> multimap = ArrayListMultimap.create();
     private HashMap breaches = new HashMap();
-
-    //private String name;
-    //private String time;
     static private int messages_limit = 5;
     static private int time_exceed = 4;
     private Role mutedRole;
     private static int limit = 5;
-
-
+    private static boolean spam = true;
 
     public void onMessageReceived(MessageReceivedEvent e){
-        if(e.getAuthor().getName().equals("TestBot123456")){
-            // nie rob nic
-        } else {
-            String user = e.getAuthor().getName();
-            String acttime = getTime();
-            //name = user;
-            //time = acttime;
-            multimap.put(user, acttime);
-            spamcheck(e.getAuthor().getName(), e);
+        if (spam) {
+            if (e.getAuthor().getName().equals("TestBot123456")) {
+                // nie rob nic
+            } else {
+                String user = e.getAuthor().getName();
+                String acttime = getTime();
+                multimap.put(user, acttime);
+                spamcheck(e.getAuthor().getName(), e);
+            }
         }
     }
     public void spamcheck(String name, MessageReceivedEvent e){
@@ -92,5 +87,22 @@ public class Spam extends ListenerAdapter {
     }
     public static void setBreachesLimit(int nr_breaches){
         limit = nr_breaches;
+    }
+    public static void toggleSpam(){
+        if(spam){
+            spam = false;
+        } else {
+            spam = true;
+        }
+    }
+    public static String getSpamStatus(){
+        if (spam){
+            return "włączony";
+        } else {
+            return  "wyłączony";
+        }
+    }
+    public static boolean getSpam(){
+        return spam;
     }
 }

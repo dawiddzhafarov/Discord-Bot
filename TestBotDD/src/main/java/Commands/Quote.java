@@ -2,7 +2,6 @@ package Commands;
 
 import Commands_utilities.Command;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-
 import java.util.*;
 
 public class Quote extends Command {
@@ -12,8 +11,8 @@ public class Quote extends Command {
     public Quote() {
         //super("qoute", "This commend allows to save qoutes.");
         name = "qoute";
-        help = "This commend allows to save qoutes.";
-        aliases = Arrays.asList("q","stupidshit");
+        help = "Use !quote <quote> to save quotes..";
+        aliases = Arrays.asList("q","quo");
     }
 
     @Override
