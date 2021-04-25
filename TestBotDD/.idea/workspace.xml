@@ -23,15 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e70c8b5f-8479-499e-a4dc-1a045b37c20a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Commands/RolePost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/Clear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/CustomCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/CustomCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RoleReactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Passive/RoleReactions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Bot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Commands/Clear.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Commands/Clear.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Commands/CustomCommands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Commands/CustomCommands.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/RolePost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/RolePost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Passive/RoleReactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Passive/RoleReactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Commands/RolePost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Commands/RolePost.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +101,7 @@
       <workItem from="1617967200972" duration="12905000" />
       <workItem from="1618050389132" duration="9246000" />
       <workItem from="1618142819268" duration="12154000" />
-      <workItem from="1619354464431" duration="16015000" />
+      <workItem from="1619354464431" duration="18688000" />
     </task>
     <servers />
   </component>
@@ -138,38 +133,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="764" y="334" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617800506426" />
-    <state width="1842" height="312" key="GridCell.Tab.0.bottom" timestamp="1619372859199">
+    <state width="1842" height="312" key="GridCell.Tab.0.bottom" timestamp="1619376874421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619372859199" />
-    <state width="1842" height="312" key="GridCell.Tab.0.center" timestamp="1619372859199">
+    <state width="1842" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619376874421" />
+    <state width="1842" height="312" key="GridCell.Tab.0.center" timestamp="1619376874421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619372859199" />
-    <state width="1842" height="312" key="GridCell.Tab.0.left" timestamp="1619372859199">
+    <state width="1842" height="312" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619376874421" />
+    <state width="1842" height="312" key="GridCell.Tab.0.left" timestamp="1619376874420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619372859199" />
-    <state width="1842" height="312" key="GridCell.Tab.0.right" timestamp="1619372859199">
+    <state width="1842" height="312" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619376874420" />
+    <state width="1842" height="312" key="GridCell.Tab.0.right" timestamp="1619376874421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619372859199" />
-    <state width="1842" height="312" key="GridCell.Tab.1.bottom" timestamp="1619372859199">
+    <state width="1842" height="312" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619376874421" />
+    <state width="1842" height="312" key="GridCell.Tab.1.bottom" timestamp="1619376874421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619372859199" />
-    <state width="1842" height="312" key="GridCell.Tab.1.center" timestamp="1619372859199">
+    <state width="1842" height="312" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619376874421" />
+    <state width="1842" height="312" key="GridCell.Tab.1.center" timestamp="1619376874421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619372859199" />
-    <state width="1842" height="312" key="GridCell.Tab.1.left" timestamp="1619372859199">
+    <state width="1842" height="312" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619376874421" />
+    <state width="1842" height="312" key="GridCell.Tab.1.left" timestamp="1619376874421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619372859199" />
-    <state width="1842" height="312" key="GridCell.Tab.1.right" timestamp="1619372859199">
+    <state width="1842" height="312" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619376874421" />
+    <state width="1842" height="312" key="GridCell.Tab.1.right" timestamp="1619376874421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619372859199" />
+    <state width="1842" height="312" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619376874421" />
     <state x="483" y="361" width="672" height="678" key="search.everywhere.popup" timestamp="1618143986702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -250,12 +245,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Passive/RoleReactions.java</url>
-          <line>22</line>
+          <line>23</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Passive/RoleReactions.java</url>
-          <line>21</line>
+          <line>22</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>

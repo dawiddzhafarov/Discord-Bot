@@ -31,12 +31,22 @@ public class RolePost extends Command {// nie mam weny do nazw dzisiaj :V
         if(message.length>1){
 
             //e.getChannel().sendMessage(String.join(" ", Arrays.copyOfRange(message, messageRaw.indexOf("content:"), message.length))).queue();
-            e.getChannel().sendMessage(messageRaw.substring(messageRaw.indexOf("content: ")+9)).queue();
+            String substring = messageRaw.substring(messageRaw.indexOf("content: ") + 9);
+            e.getChannel().sendMessage(substring).queue();
+            e.getMessage().delete().queue();
 
-            for(String msg : message){
-                if(msg.split("=").length==2){
-                    postMap.put(messageRaw.substring(messageRaw.indexOf("content: ")+9),msg);
+            int i =1;
+            while (!message[i].equals("content:")){
+                if(message[i].split("=").length==2){
+                    int j = i+1;
+                    String text = message[i];
+                    while(!(message[j].split("=").length==2)&&!message[j].equals("content:")){
+                        text = text+" "+ message[j];
+                        j++;
+                    }
+                    postMap.put(substring,text);
                 }
+                i++;
             }
         }
     }

@@ -19,18 +19,28 @@ public class RoleReactions extends ListenerAdapter {
             Member reactee = e.getMember();
             for(String whichRole: RolePost.getPostMap().get(message)) {
                 if(whichRole.split("=")[0].equals(e.getReactionEmote().getEmoji())) {
-                    Role role = e.getGuild().getRolesByName(whichRole.split("=")[1].replace("=",""),true).get(0);
-                    e.getGuild().addRoleToMember(reactee, role).queue();
+                    if(e.getGuild().getRolesByName(whichRole.split("=")[1].replace("=",""),true).size()>0) {
+                        Role role = e.getGuild().getRolesByName(whichRole.split("=")[1].replace("=", ""), true).get(0);
+                        e.getGuild().addRoleToMember(reactee, role).queue();
+                    }
                 }
             }
-
         }
     }
 
     @Override
     public void onMessageReactionRemove(MessageReactionRemoveEvent e){
-        if (e.getTextChannel().getIdLong() == channelid) {
-            e.getGuild().removeRoleFromMember(e.getUserId(), e.getJDA().getRoleById(roleid)).queue();
+        String message = e.getChannel().retrieveMessageById(e.getMessageId()).complete().getContentRaw();
+        if (RolePost.getPostMap().containsKey(message)) {
+            Member reactee = e.getMember();
+            for(String whichRole: RolePost.getPostMap().get(message)) {
+                if(whichRole.split("=")[0].equals(e.getReactionEmote().getEmoji())) {
+                    if(e.getGuild().getRolesByName(whichRole.split("=")[1].replace("=",""),true).size()>0) {
+                        Role role = e.getGuild().getRolesByName(whichRole.split("=")[1].replace("=", ""), true).get(0);
+                        e.getGuild().removeRoleFromMember(e.getUserId(), role).queue();
+                    }
+                }
+            }
         }
     }
 }
