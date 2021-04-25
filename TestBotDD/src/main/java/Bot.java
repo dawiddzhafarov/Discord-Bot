@@ -2,6 +2,7 @@
 
 import Commands.*;
 import Commands_utilities.CommandsManager;
+import Passive.CustomCommandsSniffer;
 import Passive.Filter;
 import Passive.Spam;
 import net.dv8tion.jda.api.JDA;
@@ -52,6 +53,7 @@ public class Bot {
         //Kick kick = new Kick();
         FilterManager filterManager = new FilterManager();
         SpamManager spamManager = new SpamManager();
+        CustomCommandsSniffer customCommandsSniffer = new CustomCommandsSniffer();
 
         Clear clear = new Clear();
         Quote quote = new Quote();
@@ -64,6 +66,8 @@ public class Bot {
         StopAudio stop = new StopAudio();
         SkipAudio skipAudio = new SkipAudio();
         Leave leave = new Leave();
+        CustomCommands customCommands = new CustomCommands();
+
 
         manager.addCommand(leave);
         manager.addCommand(skipAudio);
@@ -78,6 +82,7 @@ public class Bot {
         manager.addCommand(mute);
         manager.addCommand(filterManager);
         manager.addCommand(spamManager);
+        manager.addCommand(customCommands);
       //  jdabuilder.disableCache(EnumSet.of(
        //         CacheFlag.CLIENT_STATUS,
         //        CacheFlag.ACTIVITY,
@@ -93,6 +98,7 @@ public class Bot {
         //jdabuilder.addEventListeners(clear);
         //jdabuilder.addEventListeners(manager);
         jdabuilder.addEventListeners(spam);
+        jdabuilder.addEventListeners(customCommandsSniffer);
 
         //jdabuilder.setActivity(Activity.playing("Type: "+manager.getPrefix()+manager.getHelpWord()+ " for command list :D"));
         try {

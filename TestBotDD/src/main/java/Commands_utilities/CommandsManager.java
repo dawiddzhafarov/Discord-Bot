@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CommandsManager extends ListenerAdapter {
-    String prefix;
-    String helpWord;
-    List<Command> commands = new ArrayList<>();
-    JDA jda;
+    private String prefix;
+    private String helpWord;
+    static private List<Command> commands = new ArrayList<>();
+    private JDA jda;
 
     public CommandsManager(String prefix, String helpWord) {
         this.prefix = prefix;
@@ -85,5 +85,17 @@ public class CommandsManager extends ListenerAdapter {
     }
     public void addJDA(JDA jda){
         this.jda = jda;
+    }
+
+    static public List<Command> getCommands() {
+        return commands;
+    }
+    static public boolean commandExist(String name){
+        for(Command command : commands){
+            if(command.getName().equals(name) || command.getAliases().contains(name)){
+                return true;
+            }
+        }
+        return false;
     }
 }
