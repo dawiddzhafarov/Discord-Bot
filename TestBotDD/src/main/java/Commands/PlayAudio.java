@@ -60,7 +60,7 @@ public class PlayAudio extends Command {
                 link = "ytsearch:" + link;
             }
 
-            PlayerManager.getInstance().loadAndPlay(e.getTextChannel(), link); //playing song
+            PlayerManager.getInstance().loadAndPlay(e.getTextChannel(), link);//playing song
         }
     }
 

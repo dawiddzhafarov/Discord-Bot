@@ -25,11 +25,19 @@ public class Join extends Command {
         assert memberVoiceState != null;
         final AudioManager audioManager = e.getGuild().getAudioManager();
         final VoiceChannel memberChannel = memberVoiceState.getChannel();
-        audioManager.openAudioConnection(memberChannel);
+        //audioManager.openAudioConnection(memberChannel); przesunąłem to nizej
         assert memberChannel != null;
         assert selfvoiceState != null;
 
-        if(selfvoiceState.getChannel() == memberVoiceState.getChannel()) e.getChannel().sendMessage("I'm already with you!").queue(); //message if already with member
-        else e.getChannel().sendMessageFormat("Connecting to a voice channel \uD83D\uDD0A", memberChannel.getName()).queue(); //if not, then join
+
+        if(memberChannel!=null) {
+            audioManager.openAudioConnection(memberChannel);
+            if (selfvoiceState.getChannel() == memberVoiceState.getChannel())
+                e.getChannel().sendMessage("I'm already with you!").queue(); //message if already with member
+            else
+                e.getChannel().sendMessageFormat("Connecting to a voice channel \uD83D\uDD0A", memberChannel.getName()).queue(); //if not, then join
+        }else {
+            e.getChannel().sendMessage("Please join a voice channel before using this command.").queue();
+        }
     }
 }
