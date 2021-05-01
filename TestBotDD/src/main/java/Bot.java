@@ -69,6 +69,7 @@ public class Bot {
         Leave leave = new Leave();
         CustomCommands customCommands = new CustomCommands();
         RolePost rolePost = new RolePost();
+        RoleCommands roleCommands = new RoleCommands();
 
 
         manager.addCommand(leave);
@@ -86,6 +87,7 @@ public class Bot {
         manager.addCommand(spamManager);
         manager.addCommand(customCommands);
         manager.addCommand(rolePost);
+        manager.addCommand(roleCommands);
       //  jdabuilder.disableCache(EnumSet.of(
        //         CacheFlag.CLIENT_STATUS,
         //        CacheFlag.ACTIVITY,
