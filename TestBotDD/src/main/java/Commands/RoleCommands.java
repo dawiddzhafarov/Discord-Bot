@@ -53,6 +53,9 @@ public class RoleCommands  extends Command {
                 return true;
             }
         }
+        if (roleMap.get("everyone").contains(name)){
+            return true;
+        }
         return false;
     }
 }

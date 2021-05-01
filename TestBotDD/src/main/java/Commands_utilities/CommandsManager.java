@@ -61,7 +61,7 @@ public class CommandsManager extends ListenerAdapter {
                 for (Command command : commands) {
 
                     if (mess.matches( command.getName()) || command.getAliases().contains(mess)) {
-                        if(e.getMember().hasPermission(Permission.valueOf("ADMINISTRATOR")) || RoleCommands.roleCheck(e.getMember().getRoles(),mess)) {
+                        if(e.getMember().hasPermission(Permission.valueOf("ADMINISTRATOR")) || RoleCommands.roleCheck(e.getMember().getRoles(),command.name)) {
                             command.execute(e);
                         }
                     }
