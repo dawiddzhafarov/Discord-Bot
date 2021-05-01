@@ -1,6 +1,7 @@
 package Commands;
 
 import Commands_utilities.Command;
+import Commands_utilities.CommandsManager;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
 import net.dv8tion.jda.api.entities.Member;
@@ -36,7 +37,13 @@ public class RoleCommands  extends Command {
                     j++;
                 }
                 for(int i=j+1;i<message.length;i++){
-                    roleMap.put(role,message[i]);
+                    if(message[i].equals("all")){
+                        for(Command command : CommandsManager.getCommands()){
+                            roleMap.put(role, command.getName());
+                        }
+                    }else {
+                        roleMap.put(role, message[i]);
+                    }
                 }
             }else {
                 e.getChannel().sendMessage("placeholder ale coś aby dodać komendy").queue();
