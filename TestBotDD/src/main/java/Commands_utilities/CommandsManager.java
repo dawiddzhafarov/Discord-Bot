@@ -1,7 +1,9 @@
 package Commands_utilities;
 
+import Commands.RoleCommands;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -59,7 +61,9 @@ public class CommandsManager extends ListenerAdapter {
                 for (Command command : commands) {
 
                     if (mess.matches( command.getName()) || command.getAliases().contains(mess)) {
-                        command.execute(e);
+                        if(e.getMember().hasPermission(Permission.valueOf("ADMINISTRATOR")) || RoleCommands.roleCheck(e.getMember().getRoles(),mess)) {
+                            command.execute(e);
+                        }
                     }
                 }
             }
