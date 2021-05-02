@@ -30,19 +30,39 @@ public class RoleCommands  extends Command {
 
         if(message.length > 1){
             if(message.length > 2 && e.getMessage().getContentRaw().contains("commands:")){
-                int j = 2;
-                String role = message[1];
-                while (!message[j].equals("commands:")) {
-                    role = role + " " + message[j];
-                    j++;
-                }
-                for(int i=j+1;i<message.length;i++){
-                    if(message[i].equals("all")){
-                        for(Command command : CommandsManager.getCommands()){
-                            roleMap.put(role, command.getName());
+                if(message[1].equals("remove")){
+                    int j = 3;
+                    String role = message[2];
+                    while (!message[j].equals("commands:")) {
+                        role = role + " " + message[j];
+                        j++;
+                    }
+                    for (int i = j + 1; i < message.length; i++) {
+                        if (message[i].equals("all")) {
+                            roleMap.removeAll(role);
+                        } else {
+                            roleMap.remove(role, message[i]);
                         }
-                    }else {
-                        roleMap.put(role, message[i]);
+                    }
+                }else {
+                    int j = 2;
+                    String role = message[1];
+                    while (!message[j].equals("commands:")) {
+                        role = role + " " + message[j];
+                        j++;
+                    }
+                    for (int i = j + 1; i < message.length; i++) {
+                        if (message[i].equals("all")) {
+                            for (Command command : CommandsManager.getCommands()) {
+                                if(!roleMap.containsEntry(role, command.getName())) {
+                                    roleMap.put(role, command.getName());
+                                }
+                            }
+                        } else {
+                            if(!roleMap.containsEntry(role, message[i])) {
+                                roleMap.put(role, message[i]);
+                            }
+                        }
                     }
                 }
             }else {

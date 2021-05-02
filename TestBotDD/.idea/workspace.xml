@@ -24,6 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e70c8b5f-8479-499e-a4dc-1a045b37c20a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/Clear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Commands/RoleCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/RoleCommands.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,6 +92,7 @@
       <workItem from="1619354464431" duration="18688000" />
       <workItem from="1619805276841" duration="3166000" />
       <workItem from="1619867296729" duration="4091000" />
+      <workItem from="1619961755441" duration="1438000" />
     </task>
     <servers />
   </component>
@@ -122,38 +124,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="764" y="334" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617800506426" />
-    <state width="1842" height="312" key="GridCell.Tab.0.bottom" timestamp="1619871930797">
+    <state width="1842" height="312" key="GridCell.Tab.0.bottom" timestamp="1619962795667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619871930797" />
-    <state width="1842" height="312" key="GridCell.Tab.0.center" timestamp="1619871930797">
+    <state width="1842" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619962795667" />
+    <state width="1842" height="312" key="GridCell.Tab.0.center" timestamp="1619962795667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619871930797" />
-    <state width="1842" height="312" key="GridCell.Tab.0.left" timestamp="1619871930797">
+    <state width="1842" height="312" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619962795667" />
+    <state width="1842" height="312" key="GridCell.Tab.0.left" timestamp="1619962795667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619871930797" />
-    <state width="1842" height="312" key="GridCell.Tab.0.right" timestamp="1619871930797">
+    <state width="1842" height="312" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619962795667" />
+    <state width="1842" height="312" key="GridCell.Tab.0.right" timestamp="1619962795667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619871930797" />
-    <state width="1842" height="312" key="GridCell.Tab.1.bottom" timestamp="1619871936797">
+    <state width="1842" height="312" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619962795667" />
+    <state width="1842" height="312" key="GridCell.Tab.1.bottom" timestamp="1619962817677">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619871936797" />
-    <state width="1842" height="312" key="GridCell.Tab.1.center" timestamp="1619871936797">
+    <state width="1842" height="312" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619962817677" />
+    <state width="1842" height="312" key="GridCell.Tab.1.center" timestamp="1619962817677">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619871936797" />
-    <state width="1842" height="312" key="GridCell.Tab.1.left" timestamp="1619871936797">
+    <state width="1842" height="312" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619962817677" />
+    <state width="1842" height="312" key="GridCell.Tab.1.left" timestamp="1619962817676">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619871936797" />
-    <state width="1842" height="312" key="GridCell.Tab.1.right" timestamp="1619871936797">
+    <state width="1842" height="312" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619962817676" />
+    <state width="1842" height="312" key="GridCell.Tab.1.right" timestamp="1619962817677">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619871936797" />
+    <state width="1842" height="312" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619962817677" />
     <state x="483" y="361" width="672" height="678" key="search.everywhere.popup" timestamp="1618143986702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -244,7 +246,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Commands/RoleCommands.java</url>
-          <line>44</line>
+          <line>62</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -254,18 +256,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Commands/RoleCommands.java</url>
-          <line>57</line>
+          <line>77</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Commands/RoleCommands.java</url>
-          <line>62</line>
+          <line>82</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Commands/RoleCommands.java</url>
-          <line>63</line>
+          <line>83</line>
           <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Commands/RoleCommands.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

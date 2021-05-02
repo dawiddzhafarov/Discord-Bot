@@ -18,7 +18,7 @@ public class Clear extends Command {
     }
     @Override
     protected void execute(MessageReceivedEvent e){
-        if(e.getMember().hasPermission(Permission.valueOf("MESSAGE_MANAGE"))) {
+        if(e.getMember().hasPermission(Permission.valueOf("MESSAGE_MANAGE"))|| RoleCommands.roleCheck(e.getMember().getRoles(),name)) {
             String[] args = e.getMessage().getContentRaw().split("\\s+");
             if (args.length < 2) {
                 e.getChannel().sendMessage("Po komendzie " + Prefix.prefix + "clear podaj liczbę wiadomości do usunięcia!").queue();
