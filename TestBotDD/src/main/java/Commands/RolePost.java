@@ -16,13 +16,10 @@ public class RolePost extends Command {// nie mam weny do nazw dzisiaj :V
 
     public RolePost() {
         name = "rolepost";
-        help = "Type " + Prefix.prefix + "command add <name of new command> <what will bot respond with> to add new command. " + "\n" +
-                "For example: " + Prefix.prefix + "command add mitochondria is a powerhouse of the cell" + "\n" +
-                "Type " + Prefix.prefix + "command remove <name of created command> to delete. " + "\n" +
-                "For example: " + Prefix.prefix + "command remove mitochondria " + "\n" +
-                "Type " + Prefix.prefix + "command list to get a list of created commands";
+        help = "Type " + Prefix.prefix + "rolepost <emote>=<role> <emote>=<role> ... content: <post content> to create reaction post" + "\n" +
+                "For example: " + Prefix.prefix + "command :thinking:=New User content: React using :thinking: to be granted role New User" ;
 
-        aliases = Arrays.asList("rp", "dunno :V");
+        aliases = Arrays.asList("rp", "rolep");
     }
 
     @Override

@@ -19,14 +19,15 @@ import java.util.concurrent.TimeUnit;
 public class PlayAudio extends Command {
     public PlayAudio(){
         name = "play";
-        help = "Use !play <yt_link> or !play <song_name> to play a song. Use !play info to get info about current song.";
+        help = "Use !play <yt_link> or !play <song_name> to play a song. Use !play info to get info about current song."+ "\n" +
+        "Use !play to resume played song.";
         aliases = Arrays.asList("pl", "p");
     }
     @Override
     protected void execute(MessageReceivedEvent e) {
         String[] args = e.getMessage().getContentRaw().split("\\s+");
         if (args.length == 1){
-            botJoin(e);
+            //botJoin(e);
             final GuildMusicManager musicManager = PlayerManager.getInstance().getMusicManager(e.getGuild());
             musicManager.getTrackScheduler().getPlayer().setPaused(false); //resuming song
             e.getChannel().sendMessage("The song has been resumed").queue();

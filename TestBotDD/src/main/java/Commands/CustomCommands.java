@@ -29,7 +29,7 @@ public class CustomCommands extends Command {
             e.getChannel().sendMessage("Please follow !command with add, remove, list or use !help for more info").queue();
         }else if (message[1].equalsIgnoreCase("add")){
             if(message.length<4){
-                e.getChannel().sendMessage("Please use format !command add <command name> <command content>. For example type !help.").queue();
+                e.getChannel().sendMessage("Please use format !command add <command name> <command content>. For an example type !help.").queue();
             }else {
                 if(commandsMap.containsKey(message[2]) || CommandsManager.commandExist(message[2])){
                     e.getChannel().sendMessage("Command with this name already exist.").queue();
@@ -45,7 +45,7 @@ public class CustomCommands extends Command {
                 e.getChannel().sendMessage("Command has been removed").queue();
 
             }else{
-                e.getChannel().sendMessage("Please provide command name after remove. For example type !help").queue();
+                e.getChannel().sendMessage("Please provide command name after remove. For an example type !help").queue();
             }
 
         }else if(message[1].equalsIgnoreCase("list")){

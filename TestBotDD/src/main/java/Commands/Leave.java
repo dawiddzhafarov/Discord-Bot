@@ -12,7 +12,7 @@ public class Leave extends Command {
     public Leave(){
         name = "leave";
         help = "Use !leave to tell bot to leave a voice channel you're currently in.";
-        aliases = Arrays.asList("le", "l");
+        aliases = Arrays.asList("le", "l","begone");
     }
 
     public void execute(MessageReceivedEvent e){

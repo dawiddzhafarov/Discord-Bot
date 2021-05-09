@@ -11,7 +11,8 @@ public class Prefix extends Command {
 
     public Prefix(CommandsManager manager){
         name = "prefix";
-        help = "Use !prefix <symbol/s> to change prefix.";
+        help = "Use !prefix <symbol/s> to change prefix."+"\n"+
+        "Example: !prefix anything";
         aliases = Arrays.asList("p","pref");
         prefix = manager.getPrefix();
         this.manager = manager;

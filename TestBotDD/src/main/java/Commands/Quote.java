@@ -2,6 +2,8 @@ package Commands;
 
 import Commands_utilities.Command;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import org.codehaus.plexus.util.StringUtils;
+
 import java.util.*;
 
 public class Quote extends Command {
@@ -10,8 +12,15 @@ public class Quote extends Command {
 
     public Quote() {
         //super("qoute", "This commend allows to save qoutes.");
-        name = "qoute";
-        help = "Use !quote <quote> to save quotes..";
+        name = "quote";
+        help = "Use !quote add <quote> to save quotes"+"\n"+
+        "Example: !quote add To be, or not to be?"+"\n"+
+                "Use !quote remove <number> to remove quote"+"\n"+
+                "Example: !quote remove 2 will remove a second quote from the list"+"\n"+
+                "Use !quote list to see whole list of quotes"+"\n"+
+                "Use !quote random to see a random quote"+"\n"+
+                "Use !quote <number> to see chosen quote"+"\n"+
+                "Example: !quote 2 will display a second quote from the list";
         aliases = Arrays.asList("q","quo");
     }
 
@@ -20,12 +29,25 @@ public class Quote extends Command {
         String messageRaw = e.getMessage().getContentRaw();
         String[] message = messageRaw.split(" ");
         if(message.length == 1){
-            e.getChannel().sendMessage("jakies info o qoute").queue();
+            e.getChannel().sendMessage("jakies info o Quote").queue();
         }else if (message[1].equalsIgnoreCase("add")){
-            qouteList.add(messageRaw.substring(messageRaw.toLowerCase().indexOf("add")+1));
-            e.getChannel().sendMessage("Qoute has been added").queue();
+            qouteList.add(messageRaw.substring(messageRaw.toLowerCase().indexOf("add")+3));
+            e.getChannel().sendMessage("Quote has been added").queue();
         }else if(message[1].equalsIgnoreCase("random")){
             e.getChannel().sendMessage(qouteList.get(rand.nextInt(qouteList.size()))).queue();
+        }else if(StringUtils.isNumeric(message[1])){
+            if(qouteList.size()>=Integer.parseInt(message[1]) && 0<Integer.parseInt(message[1])) {
+                e.getChannel().sendMessage(qouteList.get(Integer.parseInt(message[1])-1)).queue();
+            }
+        }else if(message[1].equalsIgnoreCase("remove")&&StringUtils.isNumeric(message[2])){
+            if(qouteList.size()>=Integer.parseInt(message[2]) && 0<Integer.parseInt(message[2])) {
+                qouteList.remove(Integer.parseInt(message[2]) - 1);
+                e.getChannel().sendMessage("Quote has been removed.").queue();
+            }
+        }else if(message[1].equalsIgnoreCase("list")){
+            for(int i =0;i< qouteList.size();i++) {
+                e.getChannel().sendMessage(i+1 + " Qoute: "+qouteList.get(i)).queue();
+            }
         }
     }
 }

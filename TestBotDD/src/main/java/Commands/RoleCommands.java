@@ -19,8 +19,11 @@ public class RoleCommands  extends Command {
 
     public RoleCommands() {
         name = "rolecommands";
-        help = "Use !rolecommands <RoleName> commands: <command names> to allow chosen role use specified commands" +
-                "Example: !rolecommands Mod commands: clear rolepost kick  to allow users with role Mod to use commands clear, rolepost and kick";
+        help = "Use !rolecommands <RoleName or everyone> commands: <command names or all> to allow chosen role use specified commands" +"\n"+
+                "Example: !rolecommands everyone commands: clear rolepost kick  to allow every user to use commands clear, rolepost and kick"+"\n"+
+                "!rolecommands Mod commands: all  to allow users with role Mod to use all commands"+"\n"+
+                "Use !rolecommands remove <RoleName or everyone> commands: <command names or all> to remove specified commands from list of allowed commands fo specified role" +"\n"+
+                "Example: !rolecommands remove everyone commands: clear rolepost kick to disallow every user from using commands clear, rolepost and kick";
         aliases = Arrays.asList("rc", "rolecom");
     }
 
@@ -66,10 +69,10 @@ public class RoleCommands  extends Command {
                     }
                 }
             }else {
-                e.getChannel().sendMessage("placeholder ale coś aby dodać komendy").queue();
+                e.getChannel().sendMessage("Please specify role and list commands after commands:. For more info please use !help to see how to use this command").queue();
             }
         }else{
-            e.getChannel().sendMessage("placeholder").queue();
+            e.getChannel().sendMessage("Please use !help to see how to use this command").queue();
         }
 
     }
