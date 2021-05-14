@@ -4,6 +4,7 @@ import Commands_utilities.Command;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import org.codehaus.plexus.util.StringUtils;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Quote extends Command {
@@ -29,9 +30,13 @@ public class Quote extends Command {
         String messageRaw = e.getMessage().getContentRaw();
         String[] message = messageRaw.split(" ");
         if(message.length == 1){
-            e.getChannel().sendMessage("jakies info o Quote").queue();
+            e.getChannel().sendMessage("Quote is used for saving quotes").queue();
         }else if (message[1].equalsIgnoreCase("add")){
-            qouteList.add(messageRaw.substring(messageRaw.toLowerCase().indexOf("add")+3));
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+            Date date = new Date(System.currentTimeMillis());
+
+            qouteList.add(messageRaw.substring(messageRaw.toLowerCase().indexOf("add")+3)+"-"+formatter.format(date));
+
             e.getChannel().sendMessage("Quote has been added").queue();
         }else if(message[1].equalsIgnoreCase("random")){
             e.getChannel().sendMessage(qouteList.get(rand.nextInt(qouteList.size()))).queue();
@@ -39,10 +44,12 @@ public class Quote extends Command {
             if(qouteList.size()>=Integer.parseInt(message[1]) && 0<Integer.parseInt(message[1])) {
                 e.getChannel().sendMessage(qouteList.get(Integer.parseInt(message[1])-1)).queue();
             }
-        }else if(message[1].equalsIgnoreCase("remove")&&StringUtils.isNumeric(message[2])){
-            if(qouteList.size()>=Integer.parseInt(message[2]) && 0<Integer.parseInt(message[2])) {
-                qouteList.remove(Integer.parseInt(message[2]) - 1);
-                e.getChannel().sendMessage("Quote has been removed.").queue();
+        }else if(message[1].equalsIgnoreCase("remove")&&message.length == 3){
+            if(StringUtils.isNumeric(message[2])) {
+                if (qouteList.size() >= Integer.parseInt(message[2]) && 0 < Integer.parseInt(message[2])) {
+                    qouteList.remove(Integer.parseInt(message[2]) - 1);
+                    e.getChannel().sendMessage("Quote has been removed.").queue();
+                }
             }
         }else if(message[1].equalsIgnoreCase("list")){
             for(int i =0;i< qouteList.size();i++) {
