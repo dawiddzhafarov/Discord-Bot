@@ -24,13 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e70c8b5f-8479-499e-a4dc-1a045b37c20a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/CustomCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/CustomCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/Leave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/Leave.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/PlayAudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/PlayAudio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/Prefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/Prefix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/Quote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/RoleCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/RoleCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/RolePost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/RolePost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Passive/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Passive/Filter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,23 +59,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/ProjektQuizlo-main/Quizlo" />
   </component>
   <component name="RunManager">
     <configuration name="Bot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Bot" />
       <module name="TestBot" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,6 +93,8 @@
       <workItem from="1619867296729" duration="4091000" />
       <workItem from="1619961755441" duration="2073000" />
       <workItem from="1620561680818" duration="4719000" />
+      <workItem from="1620806638453" duration="1232000" />
+      <workItem from="1620985971520" duration="2338000" />
     </task>
     <servers />
   </component>
@@ -137,10 +122,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="681" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617879365120" />
-    <state x="764" y="334" key="FileChooserDialogImpl" timestamp="1617800506426">
+    <state x="764" y="334" key="FileChooserDialogImpl" timestamp="1620806677456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="764" y="334" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617800506426" />
+    <state x="764" y="334" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1620806677456" />
     <state width="1842" height="312" key="GridCell.Tab.0.bottom" timestamp="1620577404319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -183,12 +168,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Passive/Filter.java</url>
-          <line>103</line>
+          <line>105</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Passive/Filter.java</url>
-          <line>114</line>
+          <line>116</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

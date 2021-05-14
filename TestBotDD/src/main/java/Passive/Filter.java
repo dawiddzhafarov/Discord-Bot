@@ -92,10 +92,12 @@ public class Filter extends ListenerAdapter {
             if (delete) {
                 userMap.put(e.getMessage().getTimeCreated().toInstant().toEpochMilli(),e.getAuthor().getAsTag() );
                 int numberOfBreaches = 0;
+
+                userMap.entrySet().removeIf(entry -> entry.getKey()+timePeriode*60000<e.getMessage().getTimeCreated().toInstant().toEpochMilli());
                 for(Map.Entry<Long,String> entry : userMap.entrySet()) {
-                    if(entry.getKey()+timePeriode*60000<e.getMessage().getTimeCreated().toInstant().toEpochMilli()){//usuwa wpis jeswli starcszy niż 30 min :P
-                        userMap.remove(entry.getKey());
-                    }
+                    //if(entry.getKey()+timePeriode*60000<e.getMessage().getTimeCreated().toInstant().toEpochMilli()){//usuwa wpis jeswli starcszy niż 30 min :P
+                    //    userMap.remove(entry.getKey());
+                    //}
                     if(entry.getValue().equals(e.getAuthor().getAsTag())){
                         numberOfBreaches++;
                     }
