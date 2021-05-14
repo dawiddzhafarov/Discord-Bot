@@ -18,23 +18,12 @@ public abstract class Command {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getHelp() {
         return help;
-    }
-
-    public void setHelp(String help) {
-        this.help = help;
     }
 
     public List<String> getAliases() {
         return aliases;
     }
 
-    public void setAliases(List<String> aliases) {
-        this.aliases = aliases;
-    }
 }

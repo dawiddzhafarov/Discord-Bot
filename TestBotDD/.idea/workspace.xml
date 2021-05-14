@@ -24,7 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e70c8b5f-8479-499e-a4dc-1a045b37c20a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Passive/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Passive/Filter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Commands_utilities/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands_utilities/Command.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +69,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Bot" />
@@ -94,7 +105,7 @@
       <workItem from="1619961755441" duration="2073000" />
       <workItem from="1620561680818" duration="4719000" />
       <workItem from="1620806638453" duration="1232000" />
-      <workItem from="1620985971520" duration="2338000" />
+      <workItem from="1620985971520" duration="4802000" />
     </task>
     <servers />
   </component>
@@ -126,22 +137,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="764" y="334" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1620806677456" />
-    <state width="1842" height="312" key="GridCell.Tab.0.bottom" timestamp="1620577404319">
+    <state width="1842" height="252" key="GridCell.Tab.0.bottom" timestamp="1620997137876">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1620577404319" />
-    <state width="1842" height="312" key="GridCell.Tab.0.center" timestamp="1620577404319">
+    <state width="1842" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1620997137876" />
+    <state width="1842" height="252" key="GridCell.Tab.0.center" timestamp="1620997137875">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1620577404319" />
-    <state width="1842" height="312" key="GridCell.Tab.0.left" timestamp="1620577404319">
+    <state width="1842" height="252" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1620997137875" />
+    <state width="1842" height="252" key="GridCell.Tab.0.left" timestamp="1620997137875">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1620577404319" />
-    <state width="1842" height="312" key="GridCell.Tab.0.right" timestamp="1620577404319">
+    <state width="1842" height="252" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1620997137875" />
+    <state width="1842" height="252" key="GridCell.Tab.0.right" timestamp="1620997137876">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1842" height="312" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1620577404319" />
+    <state width="1842" height="252" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1620997137876" />
     <state width="1842" height="312" key="GridCell.Tab.1.bottom" timestamp="1620577421656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
