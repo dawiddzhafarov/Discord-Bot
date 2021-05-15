@@ -1,4 +1,4 @@
-#Zadanie 1
+# Zadanie 1
 Na podstawie prezentacji stwórz własnego bota oraz tymczasowy serwer na Discordzie (na którym będziesz administratorem). Zmodyfikuj klasę Bot w taki sposób, aby bot pojawił się na Twoim serwerze oraz miał status online.
 Jeśli zadanie zostało poprawnie wykonane w konsoli powinno pojawić się:
 
@@ -6,7 +6,7 @@ Jeśli zadanie zostało poprawnie wykonane w konsoli powinno pojawić się:
 
 Jako rozwiązanie prześlij uzupełnioną klasę Bot
 
-#Zadanie 2
+# Zadanie 2
 Napisz klasę, która obsłuży wpisanie w kanale tekstowym wyrażenia !ping w taki sposób, aby bot odpowiedział „pong”. W tym celu stwórz nową klasę rozszerzającą ListenerAdapter.
 Aby napisane przez Ciebie klasa zadziałała, nie zapomnij jej zainicjalizować oraz dodać  do jdabuilder.addEventListeners(Obiekt_klasy);
 
@@ -17,7 +17,7 @@ Jako rozwiązanie prześlij zaktualizowaną klasę Bot oraz nowo utworzoną.
 
 
 
-#Zadanie 3
+# Zadanie 3
 Wykorzystując klasę Command i CommandsManager utwórz klasę która obsłuży wpisanie w kanale tekstowym wyrażenia:
 !ping w taki sposób, aby bot odpowiedział „pong”
 !ping x gdzie x to jakaś liczba, aby bot odpowiedział „pong” x razy
