@@ -70,7 +70,7 @@ public class Bot {
         CustomCommands customCommands = new CustomCommands();
         RolePost rolePost = new RolePost();
         RoleCommands roleCommands = new RoleCommands();
-
+        
 
         manager.addCommand(leave);
         manager.addCommand(skipAudio);
