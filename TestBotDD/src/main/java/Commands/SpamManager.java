@@ -3,7 +3,6 @@ package Commands;
 import Commands_utilities.Command;
 import Passive.Spam;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-
 import java.util.Arrays;
 
 public class SpamManager extends Command {

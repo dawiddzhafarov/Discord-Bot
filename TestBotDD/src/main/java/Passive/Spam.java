@@ -12,7 +12,6 @@ import java.awt.*;
 import java.util.*;
 import java.util.List;
 
-
 public class Spam extends ListenerAdapter {
     private static ListMultimap<String, String> multimap = ArrayListMultimap.create();
     private HashMap breaches = new HashMap();

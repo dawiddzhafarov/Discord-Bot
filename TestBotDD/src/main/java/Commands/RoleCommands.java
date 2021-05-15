@@ -4,17 +4,12 @@ import Commands_utilities.Command;
 import Commands_utilities.CommandsManager;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
-import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.requests.restaction.RoleAction;
-
-import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 
 public class RoleCommands  extends Command {
-
     private static ListMultimap<String, String> roleMap = ArrayListMultimap.create();
 
     public RoleCommands() {
@@ -74,7 +69,6 @@ public class RoleCommands  extends Command {
         }else{
             e.getChannel().sendMessage("Please use !help to see how to use this command").queue();
         }
-
     }
 
     public static boolean roleCheck(List<Role> roles, String name){

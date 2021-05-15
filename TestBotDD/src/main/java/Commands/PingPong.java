@@ -1,20 +1,16 @@
 package Commands;
 
-import Commands.Prefix;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PingPong extends ListenerAdapter {
-
     String url = "https://discord.com/oauth2/authorize?client_id=%s&scope=bot";
-    final long adminID = 818794086647201822L;
-    final long roleid = 818781151388106752L;  //new user role id
+
     @Override
     public void onMessageReceived(MessageReceivedEvent e){
         if(e.getMessage().getContentRaw().equals(Prefix.prefix+"ping")) {

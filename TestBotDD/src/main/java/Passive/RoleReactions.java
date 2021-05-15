@@ -9,9 +9,6 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class RoleReactions extends ListenerAdapter {
 
-    final long channelid = 818779964098084905L;
-    final long roleid = 818781151388106752L;
-
     @Override
     public void onMessageReactionAdd(MessageReactionAddEvent e) {
         String message = e.getChannel().retrieveMessageById(e.getMessageId()).complete().getContentRaw();

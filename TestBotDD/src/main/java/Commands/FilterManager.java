@@ -59,7 +59,6 @@ public class FilterManager  extends Command {
                 e.getChannel().sendMessage("Banning is turned off.").queue();
             }
 
-
         }else if (message[1].equalsIgnoreCase("add")){
             for(int i = 2; i<message.length;i++) {
                 Filter.add(message[i]);
@@ -70,7 +69,6 @@ public class FilterManager  extends Command {
                 if(!Filter.delete(message[i])){
                     e.getChannel().sendMessage("Phrase isn't on the list.").queue();
                 }
-
             }
         }else if(message[1].equalsIgnoreCase("toggle")){
             if(message.length == 2){

@@ -3,13 +3,9 @@ package Commands;
 import Commands_utilities.Command;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
-import com.google.common.collect.Multimap;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import org.apache.commons.collections4.MultiMap;
-
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class RolePost extends Command {// nie mam weny do nazw dzisiaj :V
     private static ListMultimap<String, String> postMap = ArrayListMultimap.create();

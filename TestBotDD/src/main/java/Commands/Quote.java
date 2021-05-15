@@ -3,7 +3,6 @@ package Commands;
 import Commands_utilities.Command;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import org.codehaus.plexus.util.StringUtils;
-
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -12,7 +11,6 @@ public class Quote extends Command {
     private Random rand = new Random();
 
     public Quote() {
-        //super("qoute", "This commend allows to save qoutes.");
         name = "quote";
         help = "Use !quote add <quote> to save quotes"+"\n"+
         "Example: !quote add To be, or not to be?"+"\n"+

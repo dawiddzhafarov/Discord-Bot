@@ -25,7 +25,6 @@ public class Prefix extends Command {
         }else if(message.length == 2){
             prefix = message[1];
             manager.setPrefix(prefix);
-            
             e.getChannel().sendMessage("Prefix has been changed to: "+prefix).queue();
         }
     }

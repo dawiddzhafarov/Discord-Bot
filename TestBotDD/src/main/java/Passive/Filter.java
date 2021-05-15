@@ -3,23 +3,17 @@ package Passive;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.GuildChannel;
 import net.dv8tion.jda.api.entities.IPermissionHolder;
-import net.dv8tion.jda.api.entities.PermissionOverride;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.requests.RestAction;
 import net.dv8tion.jda.api.requests.restaction.RoleAction;
-
 import java.awt.*;
 import java.util.*;
 import java.util.List;
 
 public class Filter extends ListenerAdapter {
-    //String[] swears = new String[]{"Cunt", "Fuck", "Motherfucker", "Gash", "Minge", "Prick", "Punani", "Pussy", "Snatch","Twat"};
     static private List<String> swears = new LinkedList<String>(Arrays.asList("cunt", "fuck", "motherfucker", "gash", "minge", "prick", "punani", "pussy", "snatch","twat"));
     private TreeMap<Long, String> userMap = new TreeMap<>();
-    //Nie moglem znaleźć nigdzie listy przeklęństw :|
-    //plany na później: dodawanie słów, wyłączanie, timeouty?
     static private boolean filter = true;
     static private boolean communicat = true;
     static private boolean kick = false;
@@ -86,7 +80,6 @@ public class Filter extends ListenerAdapter {
                     delete = true;
                     swearList.add(word);
                 }
-
             }
 
             if (delete) {
@@ -126,7 +119,6 @@ public class Filter extends ListenerAdapter {
 
                     );
 
-                //nie da się modyfikować getPermision więc to nie działa a i run nie wiem czy jest dobry :/
 
                 }else if(mutedTime.size()<numberOfBreaches){
                     if(kick) {

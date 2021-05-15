@@ -27,7 +27,6 @@ public class PlayAudio extends Command {
     protected void execute(MessageReceivedEvent e) {
         String[] args = e.getMessage().getContentRaw().split("\\s+");
         if (args.length == 1){
-            //botJoin(e);
             final GuildMusicManager musicManager = PlayerManager.getInstance().getMusicManager(e.getGuild());
             musicManager.getTrackScheduler().getPlayer().setPaused(false); //resuming song
             e.getChannel().sendMessage("The song has been resumed").queue();

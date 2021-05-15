@@ -8,7 +8,6 @@ import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +20,6 @@ public class CommandsManager extends ListenerAdapter {
     public CommandsManager(String prefix, String helpWord) {
         this.prefix = prefix;
         this.helpWord = helpWord;
-        //this.jda = jda;
     }
 
     public void addCommand(Command command) {
@@ -57,7 +55,6 @@ public class CommandsManager extends ListenerAdapter {
                 //info.addField("Twórcy","TurboFirma",false);
             }
             else {
-                //e.getChannel().sendMessage("jakies info o qoute").queue();
                 for (Command command : commands) {
 
                     if (mess.matches( command.getName()) || command.getAliases().contains(mess)) {
@@ -75,7 +72,6 @@ public class CommandsManager extends ListenerAdapter {
         jda.getPresence().setActivity(Activity.playing("Type: "+prefix+helpWord+ " for command list :D"));
 
     }
-
     public void setHelpWord(String helpWord) {
         this.helpWord = helpWord;
     }

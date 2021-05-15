@@ -25,10 +25,8 @@ public class Join extends Command {
         assert memberVoiceState != null;
         final AudioManager audioManager = e.getGuild().getAudioManager();
         final VoiceChannel memberChannel = memberVoiceState.getChannel();
-        //audioManager.openAudioConnection(memberChannel); przesunąłem to nizej
         assert memberChannel != null;
         assert selfvoiceState != null;
-
 
         if(memberChannel!=null) {
             audioManager.openAudioConnection(memberChannel);
