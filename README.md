@@ -26,7 +26,7 @@ Wykorzystując klasy Command i CommandsManager utwórz klasę która obsłuży w
 
 -Spraw aby !help podawał jakieś informacje
 
-Wskazówka: możesz oprzeć się na klasie z poprzedniego ćwiczenia. Pobierz też klasę RoleCommands.
+Wskazówka: możesz oprzeć się na klasie z poprzedniego ćwiczenia. Pobierz też klasę RoleCommands, jest ona wymagana do działania klasy CommandsManager.
 
 Jako rozwiązanie prześlij uzupełnioną klasę Bot oraz uzupełnioną klasę Ping.
 
