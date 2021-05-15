@@ -17,12 +17,18 @@ Jako rozwiązanie prześlij zaktualizowaną klasę Bot oraz nowo utworzoną.
 
 # Zadanie 3
 Wykorzystując klasy Command i CommandsManager utwórz klasę która obsłuży wpisanie w kanale tekstowym wyrażenia:
-!ping w taki sposób, aby bot odpowiedział „pong”
-!ping x gdzie x to jakaś liczba, aby bot odpowiedział „pong” x razy
-Niech posiada aliasy: p oraz pin
-Spraw aby !help podawał jakieś informacje
 
-Wskazówka: możesz wykorzystać klasę z poprzedniego ćwiczenia
+-!ping w taki sposób, aby bot odpowiedział „pong”
+
+-!ping x gdzie x to jakaś liczba, aby bot odpowiedział „pong” x razy
+
+-Niech posiada aliasy: p oraz pin
+
+-Spraw aby !help podawał jakieś informacje
+
+Wskazówka: możesz oprzeć się na klasie z poprzedniego ćwiczenia. Pobierz też klasę RoleCommands.
+
+Jako rozwiązanie prześlij uzupełnioną klasę Bot oraz uzupełnioną klasę Ping.
 
 
 
