@@ -5,6 +5,24 @@ Jeśli zadanie zostało poprawnie wykonane w konsoli powinno pojawić się:
 
 Jako rozwiązanie prześlij uzupełnioną klasę Bot
 
-
 #Zadanie 2
-Stwórz klasę która obsłuży wpisanie w czat !ping w taki sposób, aby bot odpisał "pong".
+Napisz klasę, która obsłuży wpisanie w kanale tekstowym wyrażenia !ping w taki sposób, aby bot odpowiedział „pong”. W tym celu stwórz nową klasę rozszerzającą ListenerAdapter.
+Aby napisane przez Ciebie klasa zadziałała, nie zapomnij jej zainicjalizować oraz dodać  do jdabuilder.addEventListeners(Obiekt_klasy);
+![image](https://user-images.githubusercontent.com/56028507/118361514-1fe3be00-b58c-11eb-9258-ac04d65decae.png)
+
+Jako rozwiązanie prześlij zaktualizowaną klasę Bot oraz nowo utworzoną.
+
+
+
+
+#Zadanie 3
+Wykorzystując klasę Command i CommandsManager utwórz klasę która obsłuży wpisanie w kanale tekstowym wyrażenia:
+!ping w taki sposób, aby bot odpowiedział „pong”
+!ping x gdzie x to jakaś liczba, aby bot odpowiedział „pong” x razy
+Niech posiada aliasy: p oraz pin
+Spraw aby !help podawał jakieś informacje
+
+Wskazówka: możesz wykorzystać klasę z poprzedniego ćwiczenia
+
+
+
