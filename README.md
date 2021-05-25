@@ -6,6 +6,13 @@ Jeśli zadanie zostało poprawnie wykonane, po uruchomieniu bota, w konsoli powi
 
 Jako rozwiązanie prześlij uzupełnioną klasę Bot.
 
+Uwaga!
+
+Po pobraniu folderu z zadaniem należy w pliku pom.xml przeładować projekty maven jeśli pojawiają sie w tym pliku błędy.
+
+![image](https://user-images.githubusercontent.com/56028507/119578292-8652b280-bdbc-11eb-93ca-e4a80a687bae.png)
+
+
 # Zadanie 2
 Napisz klasę, która obsłuży wpisanie w kanale tekstowym wyrażenia !ping w taki sposób, aby bot odpowiedział „pong”. W tym celu stwórz nową klasę rozszerzającą ListenerAdapter.
 Aby napisane przez Ciebie klasa zadziałała, nie zapomnij jej zainicjalizować oraz dodać  do jdabuildera.
